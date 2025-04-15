@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            all : unset;
+        }
+
+        h2{
+            margin: 0px;
+        }
+
+        .header{
+            height: 90px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            border-bottom: 1px solid rgba(66,66,66,0.2);
+        }
+
+        .logo-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+       
+        .logo{
+            margin-left: 30px;
+            font-size: 23px;
+        }
+
+        span{
+            margin-left: 25px;
+            font-size: 20px;
+        }
+        
+        span:hover::after{
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50px;
+            position: relative;
+            bottom: 18px;
+            left :5px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-div">
+            <h2 class="logo">대한민국 구석구석</h2>
+        </div>
+        <nav class="navbar">
+            <span>홈</span>
+            <span>테마</span>
+            <span>지역</span>
+            <span>여행코스</span>
+            <span>여행정보</span>
+            <span>여행혜택</span>
+        </nav>
+        <div>
+            <span>아이콘 1</span>
+            <span>아이콘 2</span>
+            <span>아이콘 3</span>
+        </div>
+    </header>
+</body>
+</html>
