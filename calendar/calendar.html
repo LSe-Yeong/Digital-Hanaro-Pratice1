@@ -176,11 +176,11 @@
         }
 
         .day{
-            width: 200px;
+            width: 150px;
         }
 
         .place{
-            width: 200px;
+            width: 150px;
         }
 
         .button{
@@ -215,6 +215,77 @@
         let cardWidth
         let leftArrow
         let rightArrow
+
+        const holeFestivals = [
+            {
+                title: "이월드 튤립 트레블",
+                location: "대구 달서구",
+                dateStart: new Date(2025, 3, 5),
+                dateEnd: new Date(2025, 3, 17),
+                address: "대구광역시 달서구 두류공원로 200",
+                image: "img/fes-1.jpg"
+            },
+            {
+                title: "진해군항제",
+                location: "경남 창원시",
+                dateStart: new Date(2025, 3, 10),
+                dateEnd: new Date(2025, 3, 19),
+                address: "경상남도 창원시 진해구",
+                image: "img/fes-2.jpg"
+            },
+            {
+                title: "서울 봄꽃축제",
+                location: "서울 영등포구",
+                dateStart: new Date(2025, 3, 13),
+                dateEnd: new Date(2025, 3, 24),
+                address: "서울특별시 영등포구 여의도동",
+                image: "img/fes-3.jpg"
+            },
+            {
+                title: "부산 다대포 해변 버스킹",
+                location: "부산 사하구",
+                dateStart: new Date(2025, 3, 12),
+                dateEnd: new Date(2025, 3, 25),
+                address: "부산광역시 사하구 다대동",
+                image: "img/fes-4.jpg"
+            },
+            {
+                title: "경주 벚꽃 마라톤",
+                location: "경북 경주시",
+                dateStart: new Date(2025, 3, 10),
+                dateEnd: new Date(2025, 3, 16),
+                address: "경상북도 경주시 보문로",
+                image: "img/fes-5.jpg"
+            },
+            {
+                title: "제주 유채꽃 축제",
+                location: "제주 서귀포시",
+                dateStart: new Date(2025, 3, 8),
+                dateEnd: new Date(2025, 3, 20),
+                address: "제주특별자치도 서귀포시 표선면",
+                image: "img/fes-6.jpg"
+            },
+            {
+                title: "인천 개항장 문화재 야행",
+                location: "인천 중구",
+                dateStart: new Date(2025, 3, 18),
+                dateEnd: new Date(2025, 3, 27),
+                address: "인천광역시 중구 중앙동",
+                image: "img/fes-7.jpg"
+            },
+            {
+                title: "춘천 레고랜드 벚꽃축제",
+                location: "강원 춘천시",
+                dateStart: new Date(2025, 3, 14),
+                dateEnd: new Date(2025, 3, 21),
+                address: "강원특별자치도 춘천시 하중도",
+                image: "img/fes-8.jpg"
+            }
+        ];
+
+
+        let festivals;
+
         window.onload = () => {
             dateContents = document.querySelectorAll(".date-set div span")
             let todayDay = new Date().getDay()
@@ -222,6 +293,7 @@
             selected = [dateContents[0],dateContents[1]]
 
             changeSelectedStyle(selected)
+            festivals = getPossibleFestival(selected[0].textContent)
 
             for(let i=2;i<dateContents.length;i=i+2){
                 dateContents[i].textContent=todayDate+1
@@ -244,18 +316,25 @@
             for(let i=0; i<dateContents.length;i=i+2){
                 dateContents[i].addEventListener("click",function(){
                     selected = [dateContents[i],dateContents[i+1]]
-                    console.log(selected)
                     changeSelectedStyle(selected)
+                    festivals = getPossibleFestival(selected[0].textContent)
+                    loadCards()
+
+                    currentIndex = 0;
+                    slide = document.querySelector(".carousel-slide");
+                    cards = document.querySelectorAll(".card");
+                    cardWidth = cards[0].offsetWidth + 20; // 카드 + margin-right
+                    leftArrow = document.querySelector(".arrow-left")
+                    rightArrow = document.querySelector(".arrow-right")
+
+                    updateArrow()
+                    updateActiveCard()
+                    moveToCenter(currentIndex + 1); // 가운데 카드 기준으로 이동
+
                 })
-                // dateContents[i].addEventListener("mouseenter",function(){
-                //     dateContents[i].style.borderRadius = "15px"
-                //     dateContents[i].style.backgroundColor = "lightgray"
-                // })
-                // dateContents[i].addEventListener("mouseleave",function(){
-                //     dateContents[i].style.borderRadius = "0px"
-                //     dateContents[i].style.backgroundColor = ""
-                // })
             }
+
+            loadCards()
 
             currentIndex = 0;
             slide = document.querySelector(".carousel-slide");
@@ -296,7 +375,11 @@
 
 
         function updateArrow() {
-            if (currentIndex==0) {
+            if (cards.length<=3){
+                leftArrow.style.visibility = "hidden"
+                rightArrow.style.visibility = "hidden"
+            }
+            else if (currentIndex==0) {
                 leftArrow.style.visibility = "hidden"
                 rightArrow.style.visibility = "visible"
             }
@@ -344,6 +427,75 @@
                 dateContents[i].classList.remove("selected")
             }
         }
+
+        function createCard(festival) {
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            card.innerHTML = `
+                <img src="${festival.image}" width="250px" height="360px">
+                <div class="vertical-line"></div>
+                <div class="info">
+                    <div class="title">
+                        <h2>${festival.title}</h2>
+                        <span>${festival.location}</span>
+                    </div>
+                    <div class="day-place">
+                        <div class="day">
+                            <h2 style="font-size: 14px; font-weight: 400;">기간</h2>
+                            <span style="font-size:16px; font-weight: 500;">${festival.dateStart.toLocaleDateString()} ~</span><br>
+                            <span style="font-size:16px; font-weight: 500;">${festival.dateEnd.toLocaleDateString()}</span>
+                        </div>
+                        <div class="place">
+                            <h2 style="font-size: 14px; font-weight: 400;">장소</h2>
+                            <span style="font-size:16px; font-weight: 500;">${festival.address}</span>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button class="goto">바로가기</button>
+                        <button class="search-path">길찾기</button>
+                    </div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function loadCards() {
+            const slide = document.querySelector(".carousel-slide");
+
+            // 기존 카드 제거
+            slide.innerHTML = "";
+
+            // 가짜 카드 추가 (양쪽에)
+            const fakeCardStart = document.createElement("div");
+            fakeCardStart.classList.add("card", "fake");
+            slide.appendChild(fakeCardStart);
+
+            festivals.forEach(festival => {
+                const card = createCard(festival);
+                slide.appendChild(card);
+            });
+
+            const fakeCardEnd = document.createElement("div");
+            fakeCardEnd.classList.add("card", "fake");
+            slide.appendChild(fakeCardEnd);
+            
+        }
+
+        const getPossibleFestival = (day) => {
+                        const possibleFestivals = []
+                        const today = new Date()
+                        const newDate = new Date(today.getFullYear(),today.getMonth(),day)
+                        for(let i=0;i<holeFestivals.length;i++) {
+                            const fest = holeFestivals[i]
+                            if(fest.dateStart<=newDate && newDate<=fest.dateEnd) {
+                                possibleFestivals.push(fest)
+                            }
+                        }
+                        return possibleFestivals
+                    }
+
                 
     </script>
 </head>
@@ -418,108 +570,7 @@
                 <button class="arrow-left" onclick="moveSlide(-1)">◀</button>  
                 <div class="carousel-track">
                   <div class="carousel-slide">
-                    <div class="card"></div>
-                    <div class="card">
-                        <img src="img/fes-1.jpg" width="250px" height="360px">
-                        <div class="vertical-line"></div>
-                        <div class="info">
-                            <div class="title">
-                                <h2>이월드 튤립 트레블</h2>
-                                <span>대구 달서구</span>
-                            </div>
-                            <div class="day-place">
-                                <div class="day">
-                                    <h2 style="font-size: 14px; font-weight: 400;">기간</h2>
-                                    <span style="font-size:16px; font-weight: 500;">2025.4.5 ~</span><br>
-                                    <span style="font-size:16px; font-weight: 500;">2025.4.27</span>
-                                </div>
-                                <div class="place">
-                                    <h2 style="font-size: 14px; font-weight: 400;">장소</h2>
-                                    <span style="font-size:16px; font-weight: 500;">대구 광역시 달서구 두류공원로 200</span>
-                                </div>
-                            </div>
-                            <div class="button">
-                                <button class="goto">바로가기</button>
-                                <button class="search-path">길찾기</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="img/fes-1.jpg" width="250px" height="360px">
-                        <div class="vertical-line"></div>
-                        <div class="info">
-                            <div class="title">
-                                <h2>이월드 튤립 트레블</h2>
-                                <span>대구 달서구</span>
-                            </div>
-                            <div class="day-place">
-                                <div class="day">
-                                    <h2 style="font-size: 14px; font-weight: 400;">기간</h2>
-                                    <span style="font-size:16px; font-weight: 500;">2025.4.5 ~</span><br>
-                                    <span style="font-size:16px; font-weight: 500;">2025.4.27</span>
-                                </div>
-                                <div class="place">
-                                    <h2 style="font-size: 14px; font-weight: 400;">장소</h2>
-                                    <span style="font-size:16px; font-weight: 500;">대구 광역시 달서구 두류공원로 200</span>
-                                </div>
-                            </div>
-                            <div class="button">
-                                <button class="goto">바로가기</button>
-                                <button class="search-path">길찾기</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="img/fes-1.jpg" width="250px" height="360px">
-                        <div class="vertical-line"></div>
-                        <div class="info">
-                            <div class="title">
-                                <h2>이월드 튤립 트레블</h2>
-                                <span>대구 달서구</span>
-                            </div>
-                            <div class="day-place">
-                                <div class="day">
-                                    <h2 style="font-size: 14px; font-weight: 400;">기간</h2>
-                                    <span style="font-size:16px; font-weight: 500;">2025.4.5 ~</span><br>
-                                    <span style="font-size:16px; font-weight: 500;">2025.4.27</span>
-                                </div>
-                                <div class="place">
-                                    <h2 style="font-size: 14px; font-weight: 400;">장소</h2>
-                                    <span style="font-size:16px; font-weight: 500;">대구 광역시 달서구 두류공원로 200</span>
-                                </div>
-                            </div>
-                            <div class="button">
-                                <button class="goto">바로가기</button>
-                                <button class="search-path">길찾기</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="img/fes-1.jpg" width="250px" height="360px">
-                        <div class="vertical-line"></div>
-                        <div class="info">
-                            <div class="title">
-                                <h2>이월드 튤립 트레블</h2>
-                                <span>대구 달서구</span>
-                            </div>
-                            <div class="day-place">
-                                <div class="day">
-                                    <h2 style="font-size: 14px; font-weight: 400;">기간</h2>
-                                    <span style="font-size:16px; font-weight: 500;">2025.4.5 ~</span><br>
-                                    <span style="font-size:16px; font-weight: 500;">2025.4.27</span>
-                                </div>
-                                <div class="place">
-                                    <h2 style="font-size: 14px; font-weight: 400;">장소</h2>
-                                    <span style="font-size:16px; font-weight: 500;">대구 광역시 달서구 두류공원로 200</span>
-                                </div>
-                            </div>
-                            <div class="button">
-                                <button class="goto">바로가기</button>
-                                <button class="search-path">길찾기</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card"></div>
+                   
                   </div>
                 </div>
                 <button class="arrow-right" onclick="moveSlide(1)">▶</button>
