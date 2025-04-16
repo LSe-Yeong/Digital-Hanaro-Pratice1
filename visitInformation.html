@@ -1,46 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지역 메인 | 대한민국 구석구석</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <title>대한민국 구석구석 - 여행정보</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            all: unset;
+        body{
+            all : unset;
         }
 
-        h2 {
+        h2{
             margin: 0px;
         }
 
-        .header-top {
+        .header-top{
             height: 90px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             background-color: white;
-            border-bottom: 1px solid rgba(66, 66, 66, 0.2);
+            border-bottom: 1px solid rgba(66,66,66,0.2);
         }
 
-        .logo-div {
+        .logo-div{
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .logo {
+        .logo{
             margin-left: 30px;
             font-size: 23px;
         }
 
-        .home {
-            color: black;
+        .home{
+            color:black;
             font-weight: 700;
         }
 
-        .home::after {
+        .home::after{
             content: "";
             display: inline-block;
             width: 6px;
@@ -48,23 +48,23 @@
             border-radius: 50px;
             position: relative;
             bottom: 18px;
-            left: 5px;
+            left :5px;
             background-color: black;
         }
 
-        nav span {
+        nav span{
             margin-left: 25px;
             font-size: 20px;
             color: #666666
         }
 
-        nav span:hover {
-            color: black;
+        nav span:hover{
+            color:black;
             font-weight: 700;
             visibility: visible;
         }
 
-        nav span:hover::after {
+        nav span:hover::after{
             content: "";
             display: inline-block;
             width: 6px;
@@ -72,142 +72,203 @@
             border-radius: 50px;
             position: relative;
             bottom: 18px;
-            left: 5px;
+            left :5px;
             background-color: black;
         }
 
-        body {
-            all: unset
+        .logo img {
+            height: 40px;
         }
 
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .header-utils button {
+            background: none;
+            border: none;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        body{
+            all: unset
+        }
         h3 {
             margin: 0px;
         }
-
-        hr {
+        hr{
             height: 0.5px;
             border: none;
-            background-color: rgba(66, 66, 66, 0.1);
+            background-color: rgba(66,66,66,0.1);
         }
 
-        .footer {
+        .footer{
             height: 380px;
             background-color: #f7f7f7;
         }
-
-        .content {
+        .content{
             width: 1000px;
             margin: 0px auto;
         }
-
-        .intro-1 {
+        .intro-1{
             padding-top: 10px;
             text-align: center;
         }
-
-        .sns {
+        .sns{
             display: flex;
             flex-direction: row;
             justify-content: center;
         }
-
-        .sns span {
+        .sns span{
             margin: 20px 20px;
         }
-
-        .imgs {
+        .imgs{
             margin: 20px 0px;
         }
-
-        .imgs img {
+        .imgs img{
             margin: 0px 8px;
             border-radius: 5px;
         }
-
-        .metas {
+        .metas{
             display: flex;
             flex-direction: row;
             justify-content: center;
-            margin: 20px 0px;
+            margin : 20px 0px;
         }
-
-        .metas span {
-            font-size: 13px;
+        .metas span{
+            font-size:13px;
             margin: 0px 17px;
-            color: #666666
+            color : #666666
         }
 
-        .metas2 {
+        .metas2{
             display: flex;
             flex-direction: row;
-            margin: 20px 0px;
+            margin : 20px 0px;
         }
-
-        .metas2 span {
-            font-size: 13px;
+        .metas2 span{
+            font-size:13px;
             margin: 0px 17px;
-            color: #666666
+            color : #666666
         }
-
-        .companies {
+        .companies{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            margin: 20px 0px;
+            margin : 20px 0px;
         }
-
-        .companies div {
+        .companies div{
             display: flex;
             align-items: center;
         }
-
-        .companies img {
-            margin: 0px 10px
+        .companies img{
+            margin :0px 10px
         }
 
-        .swiper-slide {
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        nav {
+            background: #fff;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            height: 90%;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+            text-decoration: none;
         }
 
-        .swiper-slide img {
-            margin: 30px;
-            max-width: 90%;
-            height: 90%;
+        nav button {
+            background: #eee;
+            border: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        nav button.active {
+            background-color: lightblue;
+            color: black;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            text-decoration: none;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
             object-fit: cover;
         }
 
-        .tit_wrap {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.85);
-            padding: 10px 16px;
-            border-radius: 8px;
-            display: block;
-            max-width: 90%;
+        .card-body {
+            padding: 15px;
         }
 
-        .tit_wrap em,
-        .tit_wrap strong {
-            display: block;
-            color: #333;
-            word-break: keep-all;
-            line-height: 1.4;
+        .card-body .title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 8px;
         }
 
-        .swiper-container {
-            height: 500px;
+        .card-body .desc {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        .card-body .location {
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        .load-more {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background-color: lightblue;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-
 
 <header class="header">
     <div class="header-top">
@@ -246,54 +307,33 @@
     </div> -->
 </header>
 
-<div class="main_showcase" style="background: #d3f0d1;">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=e492a38e-2ecc-4835-bba7-39ee75dbb53f&mode=raw"
-                     alt="남원에서 만끽하는 아날로그 여행">
-                <div class="tit_wrap">
-                    <em>봄으로 물드는 지금,</em>
-                    <strong>남원에서 만끽하는 아날로그 여행</strong>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=92a8bc11-3d45-4ab0-a8d6-6228fce2eb2f&amp;mode=raw"
-                     alt="지금 마시러 갑니다, 전국 앙죠장 투어">
-                <div class="tit_wrap">
-                    <em>오래도록 달큼한 여운</em>
-                    <strong style="color:#3d3d3d">지금 마시러 갑니다, 전국 양조장 투어 4</strong>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=27993154-6699-4c0e-b052-f360e68d21be&amp;mode=raw"
-                     alt="겹겹이 피어난 봄🌸 서산 벚꽃 여행 코스">
-                <div class="tit_wrap">
-                    <em>겹벚꽃부터 청벚꽃까지!</em>
-                    <strong style="color:#3d3d3d">겹겹이 피어난 봄🌸 서산 벚꽃 여행 코스</strong>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=73793a63-ef87-46b6-ae7c-659dd31efaaf&amp;mode=raw"
-                     alt="4월은 지구의 달🌎 나의 에코 감수성 테스트">
-                <div class="tit_wrap">
-                    <em>사진 속 친환경 여행지를 맞혀보자!</em>
-                    <strong style="color:#3d3d3d">4월은 지구의 달🌎 나의 에코 감수성 테스트</strong>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=a5917998-959b-48dd-b6ab-f0f0c9fc5706&amp;mode=raw"
-                     alt="데이터로 본 지역별 핫플레이스! 뜨는 도시 7">
-                <div class="tit_wrap">
-                    <em>방문자 수로 본 인기 급상승 도시</em>
-                    <strong style="color:#3d3d3d">데이터로 본 지역별 핫플레이스! 뜨는 도시 7</strong>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-</div>
+<nav>
+    <button class="active">전체</button>
+    <button>
+        <a href="tourAttraction.html">
+            관광지
+        </a>
+    </button>
+    <button>
+        <a href="https://app.catchtable.co.kr/">
+            음식점
+        </a>
+    </button>
+    <button>
+        <a href="https://www.yanolja.com/?trackcode=mkt_google_sa&utm_source=google_sa&utm_medium=cpc&utm_campaign=20738115572&utm_content=160897187931&utm_term=kwd-298391364620&gad_source=1&gbraid=0AAAAAoeYBbmWNBTcz_u6v4qEgWkBHgLMm&gclid=Cj0KCQjwh_i_BhCzARIsANimeoGbTb8LRSjh4VCxVNXBSetxXF5dHWiy14frlLz0l0A3iuIeTBT4oC8aAuE-EALw_wcB">
+            숙박
+        </a>
+    </button>
+    <button>
+        <a href="https://www.yanolja.com/?trackcode=mkt_google_sa&utm_source=google_sa&utm_medium=cpc&utm_campaign=20738115572&utm_content=160897187931&utm_term=kwd-298391364620&gad_source=1&gbraid=0AAAAAoeYBbmWNBTcz_u6v4qEgWkBHgLMm&gclid=Cj0KCQjwh_i_BhCzARIsANimeoGbTb8LRSjh4VCxVNXBSetxXF5dHWiy14frlLz0l0A3iuIeTBT4oC8aAuE-EALw_wcB">
+            체험
+        </a>
+    </button>
+</nav>
+
+<main class="container" id="card-container"></main>
+
+<button class="load-more" onclick="loadMore()">더보기</button>
 
 <footer class="footer">
     <div class="content">
@@ -347,8 +387,6 @@
     </div>
 </footer>
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="mainSwiper.js"></script>
-
+<script src="visitInformation.js"></script>
 </body>
 </html>
