@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/visitInformation.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/headerSearchForm.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
 
@@ -27,25 +30,27 @@
         </div>
         <nav class="navbar">
             <span class="home">홈</span>
-            <span>테마</span>
-            <span>지역</span>
-            <span>여행코스</span>
+            <span><a href="https://korean.visitkorea.or.kr/main/theme.do">테마</a></span>
+            <span><a href="https://korean.visitkorea.or.kr/main/area.do">지역</a></span>
+            <span><a href="https://korean.visitkorea.or.kr/list/travelcourse.do?service=cs">여행코스</a></span>
             <span><a href="visitInformation.html">여행정보</a></span>
-            <span>여행혜택</span>
+            <span><a href="https://korean.visitkorea.or.kr/list/travelbenefit.do?service=event">여행혜택</a></span>
         </nav>
-        <div>
-            <span>아이콘 1</span>
-            <span>아이콘 2</span>
-            <span>아이콘 3</span>
+        <div class="form">
+            <button class="search" onclick="toggleSearchForm()"><i class="ico ico-search"></i></button>
+            <button class="lang-selector" onclick="alert('페이지를 통역하시겠습니까?')"><i class="ico ico-language"></i></button>
+            <button class="menu" onclick="alert('전체 메뉴보기는 준비중입니다.')"><i class="ico ico-menu"></i></button>
         </div>
     </div>
-    <!-- <div class="header-hidden">
-        <div class="t-course">
-            <span>추천 코스</span> <br>
-            <span>AI 톡톡 플래너</span>
-        </div>
-    </div> -->
 </header>
+
+<div class="search_wrap" id="searchWrap">
+    <button type="button" class="page_back" onclick="closeSearchForm();">뒤로</button>
+    <div class="form">
+        <input type="text" placeholder="어디로, 어떤 여행을 떠날 예정인가요?">
+        <button onclick="alert('검색 실행')">검색</button>
+    </div>
+</div>
 
 <nav>
     <button class="active">전체</button>
@@ -149,5 +154,6 @@
 </footer>
 
 <script src="../js/visitInformation.js"></script>
+<script src="../js/headerSearchForm.js"></script>
 </body>
 </html>

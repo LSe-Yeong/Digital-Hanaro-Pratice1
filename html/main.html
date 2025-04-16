@@ -6,101 +6,11 @@
     <title>지역 메인 | 대한민국 구석구석</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="../css/main.css">
-    <style>
-        .form {
-            display: flex;
-            margin: 10px 0 0 10px;
-            gap: 5px;
-            align-items: center;
-        }
-
-        .form .search,
-        .form .lang-selector,
-        .form .menu {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ico {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-
-        .ico-search {
-            background-image: url('../global/icon/ico_search.png');
-        }
-
-        .ico-language {
-            background-image: url('../global/icon/ico_language.png');
-        }
-
-        .ico-menu {
-            background-image: url('../global/icon/ico_menu.png');
-        }
-
-        .search_wrap {
-            display: none;
-            background: #f9f9f9;
-            padding: 20px;
-            border-top: 1px solid #ddd;
-            position: relative;
-        }
-
-        .search_wrap.active {
-            display: block;
-        }
-
-        .search_wrap .form {
-            margin: 0;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .search_wrap input[type="text"] {
-            width: 60%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .search_wrap .page_back {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            background: none;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .search_wrap button {
-            padding: 10px 16px;
-            font-size: 15px;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .search_wrap button:hover {
-            background: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/headerSearchForm.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
-
 
 <header class="header">
     <div class="header-top">
@@ -265,16 +175,6 @@
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="../js/mainSwiper.js"></script>
-<script>
-    function toggleSearchForm() {
-        const wrap = document.getElementById('searchWrap');
-        wrap.classList.toggle('active');
-    }
-
-    function closeSearchForm() {
-        const wrap = document.getElementById('searchWrap');
-        wrap.classList.remove('active');
-    }
-</script>
+<script src="../js/headerSearchForm.js"></script>
 </body>
 </html>

@@ -1,0 +1,179 @@
+body {
+    all: unset
+}
+
+h3 {
+    margin: 0px;
+}
+
+hr {
+    height: 0.5px;
+    border: none;
+    background-color: rgba(66, 66, 66, 0.1);
+}
+
+.footer {
+    height: 380px;
+    background-color: #f7f7f7;
+}
+
+.content {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+.intro-1 {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.sns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sns span {
+    margin: 20px 20px;
+}
+
+.imgs {
+    margin: 20px 0px;
+}
+
+.imgs img {
+    margin: 0px 8px;
+    border-radius: 5px;
+}
+
+.metas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.metas span {
+    font-size: 13px;
+    margin: 0px 17px;
+    color: #666666
+}
+
+.metas2 {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px;
+}
+
+.metas2 span {
+    font-size: 13px;
+    margin: 0px 17px;
+    color: #666666
+}
+
+.companies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.companies div {
+    display: flex;
+    align-items: center;
+}
+
+.companies img {
+    margin: 0px 10px
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px 20px;
+}
+
+.social-links span {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 아이콘과 텍스트 사이 간격 */
+    padding: 8px 12px; /* 상하 여백 동일하게 */
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.social-links em {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1;
+    display: inline-block;
+}
+
+.ico {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: background-image 0.2s ease;
+}
+
+.ico_blog {
+    background-image: url('../global/icon/ico_blog_black.png');
+}
+
+.ico_blog:hover {
+    background-image: url('../global/icon/ico_blog.png');
+}
+
+.ico_post {
+    background-image: url('../global/icon/ico_post_black.png');
+}
+
+.ico_post:hover {
+    background-image: url('../global/icon/ico_post.png');
+}
+
+.ico_facebook {
+    background-image: url('../global/icon/ico_facebook_black.png');
+}
+
+.ico_facebook:hover {
+    background-image: url('../global/icon/ico_facebook.png');
+}
+
+.ico_x {
+    background-image: url('../global/icon/ico_x_black.png');
+}
+
+.ico_x:hover {
+    background-image: url('../global/icon/ico_x.png');
+}
+
+.ico_kakao {
+    background-image: url('../global/icon/ico_kakao_black.png');
+}
+
+.ico_kakao:hover {
+    background-image: url('../global/icon/ico_kakao.png');
+}
+
+.ico_instagram {
+    background-image: url('../global/icon/ico_instagram_black.png');
+}
+
+.ico_instagram:hover {
+    background-image: url('../global/icon/ico_instagram.png');
+}
+
+.ico_band {
+    background-image: url('../global/icon/ico_band_black.png');
+}
+
+.ico_band:hover {
+    background-image: url('../global/icon/ico_band.png');
+}

@@ -1,0 +1,75 @@
+body {
+    all: unset;
+}
+
+h2 {
+    margin: 0px;
+}
+
+.header-top {
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid rgba(66, 66, 66, 0.2);
+    text-decoration-line: none;
+}
+
+.logo-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 30px;
+    font-size: 23px;
+}
+
+.home {
+    color: black;
+    font-weight: 700;
+}
+
+.home::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    position: relative;
+    bottom: 18px;
+    left: 5px;
+    background-color: black;
+}
+
+nav span {
+    margin-left: 25px;
+    font-size: 20px;
+    color: #666666
+}
+
+nav span:hover {
+    color: black;
+    font-weight: 700;
+    visibility: visible;
+}
+
+nav span:hover::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    position: relative;
+    bottom: 18px;
+    left: 5px;
+    background-color: black;
+}
+
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 상위 요소의 글자색 그대로 사용 */
+}
