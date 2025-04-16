@@ -1,12 +1,11 @@
 .form {
     display: flex;
-    margin: 10px 0 0 10px;
     gap: 5px;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .form .search,
-.form .lang-selector,
+.form .lang_layer,
 .form .menu {
     background: none;
     border: none;
@@ -29,10 +28,6 @@
 
 .ico-search {
     background-image: url('../global/icon/ico_search.png');
-}
-
-.ico-language {
-    background-image: url('../global/icon/ico_language.png');
 }
 
 .ico-menu {

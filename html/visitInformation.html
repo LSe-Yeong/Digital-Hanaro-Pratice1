@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대한민국 구석구석 - 여행정보</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/visitInformation.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/headerSearchForm.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/headerLanguageSelect.css">
+    <style>
+        .category {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+        }
+
+        .category a {
+            text-decoration: none;
+            background: #eee;
+            border-radius: 20px;
+            padding: 10px 16px;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .category a.active {
+            background-color: lightblue;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
@@ -38,7 +62,21 @@
         </nav>
         <div class="form">
             <button class="search" onclick="toggleSearchForm()"><i class="ico ico-search"></i></button>
-            <button class="lang-selector" onclick="alert('페이지를 통역하시겠습니까?')"><i class="ico ico-language"></i></button>
+            <div class="lang_layer">
+                <button class="lang_btn" onclick="toggleLangMenu()"><i class="ico ico-language"></i></button>
+                <ul class="lang_menu">
+                    <li><a href="main.html" title="현재창">한국어</a></li>
+                    <li>
+                        <a href="https://english.visitkorea.or.kr/svc/main/index.do?utm_source=ko_visitkorea&utm_medium=landing_url&utm_campaign=vk_main_enu"
+                           target="_blank" title="새창">ENGLISH</a></li>
+                    <li>
+                        <a href="https://japanese.visitkorea.or.kr/svc/main/index.do?utm_source=ko_visitkorea&utm_medium=landing_url&utm_campaign=vk_main_jpn"
+                           target="_blank" title="새창">日本語</a></li>
+                    <li>
+                        <a href="https://chinese.visitkorea.or.kr/svc/main/index.do?utm_source=ko_visitkorea&utm_medium=landing_url&utm_campaign=vk_main_chs"
+                           target="_blank" title="새창">中文</a></li>
+                </ul>
+            </div>
             <button class="menu" onclick="alert('전체 메뉴보기는 준비중입니다.')"><i class="ico ico-menu"></i></button>
         </div>
     </div>
@@ -52,32 +90,16 @@
     </div>
 </div>
 
-<nav>
-    <button class="active">전체</button>
-    <button>
-        <a href="tourAttraction.html">
-            관광지
-        </a>
-    </button>
-    <button>
-        <a href="https://app.catchtable.co.kr/">
-            음식점
-        </a>
-    </button>
-    <button>
-        <a href="https://www.yanolja.com/?trackcode=mkt_google_sa&utm_source=google_sa&utm_medium=cpc&utm_campaign=20738115572&utm_content=160897187931&utm_term=kwd-298391364620&gad_source=1&gbraid=0AAAAAoeYBbmWNBTcz_u6v4qEgWkBHgLMm&gclid=Cj0KCQjwh_i_BhCzARIsANimeoGbTb8LRSjh4VCxVNXBSetxXF5dHWiy14frlLz0l0A3iuIeTBT4oC8aAuE-EALw_wcB">
-            숙박
-        </a>
-    </button>
-    <button>
-        <a href="https://www.yanolja.com/?trackcode=mkt_google_sa&utm_source=google_sa&utm_medium=cpc&utm_campaign=20738115572&utm_content=160897187931&utm_term=kwd-298391364620&gad_source=1&gbraid=0AAAAAoeYBbmWNBTcz_u6v4qEgWkBHgLMm&gclid=Cj0KCQjwh_i_BhCzARIsANimeoGbTb8LRSjh4VCxVNXBSetxXF5dHWiy14frlLz0l0A3iuIeTBT4oC8aAuE-EALw_wcB">
-            체험
-        </a>
-    </button>
+<nav class="category">
+    <a href="#" class="active">전체</a>
+    <a href="tourAttraction.html">관광지</a>
+    <a href="https://app.catchtable.co.kr/">음식점</a>
+    <a href="https://www.yanolja.com/">숙박</a>
+    <a href="https://www.yanolja.com/">체험</a>
 </nav>
 
-<main class="container" id="card-container"></main>
 
+<main class="container" id="card-container"></main>
 <button class="load-more" onclick="loadMore()">더보기</button>
 
 <footer class="footer">
@@ -117,11 +139,11 @@
         </div>
         <hr>
         <div class="imgs">
-            <img src="../global/img/pic_0.png" width="180px" height="70px">
-            <img src="../global/img/pic_1.png" width="180px" height="70px">
-            <img src="../global/img/pic_2.png" width="180px" height="70px">
-            <img src="../global/img/pic_3.png" width="180px" height="70px">
-            <img src="../global/img/pic_4.png" width="180px" height="70px">
+            <img src="../global/img/pic_0.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_1.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_2.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_3.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_4.png" width="180px" height="70px" alt="">
         </div>
         <div class="metas">
             <span>개인정보처리방침</span>
@@ -145,9 +167,9 @@
         <div class="companies">
             <span>한국관광공사</span>
             <div>
-                <img src="../global/img/com_1.png" width="120px" height="40px">
-                <img src="../global/img/com_2.png" width="120px" height="40px">
-                <img src="../global/img/com_3.png" width="120px" height="40px">
+                <img src="../global/img/com_1.png" width="120px" height="40px" alt="">
+                <img src="../global/img/com_2.png" width="120px" height="40px" alt="">
+                <img src="../global/img/com_3.png" width="120px" height="40px" alt="">
             </div>
         </div>
     </div>
@@ -155,5 +177,19 @@
 
 <script src="../js/visitInformation.js"></script>
 <script src="../js/headerSearchForm.js"></script>
+<script>
+    function toggleLangMenu() {
+        const langLayer = document.querySelector('.lang_layer');
+        langLayer.classList.toggle('show');
+    }
+
+    // 바깥 클릭 시 닫기
+    document.addEventListener('click', function (e) {
+        const langLayer = document.querySelector('.lang_layer');
+        if (!langLayer.contains(e.target)) {
+            langLayer.classList.remove('show');
+        }
+    });
+</script>
 </body>
 </html>

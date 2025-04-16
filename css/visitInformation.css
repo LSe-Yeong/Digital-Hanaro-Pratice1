@@ -2,19 +2,19 @@
     height: 40px;
 }
 
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-}
+/*.main-nav ul {*/
+/*    list-style: none;*/
+/*    display: flex;*/
+/*    gap: 10px;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
 
-.main-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
+/*.main-nav a {*/
+/*    text-decoration: none;*/
+/*    color: #333;*/
+/*    font-weight: bold;*/
+/*}*/
 
 .header-utils button {
     background: none;
@@ -27,29 +27,6 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     background: #f5f5f5;
     color: #333;
-}
-
-nav {
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px;
-    text-decoration: none;
-}
-
-nav button {
-    background: #eee;
-    border: none;
-    padding: 10px 16px;
-    cursor: pointer;
-    border-radius: 20px;
-    text-decoration: none;
-}
-
-nav button.active {
-    background-color: lightblue;
-    color: black;
 }
 
 .container {
