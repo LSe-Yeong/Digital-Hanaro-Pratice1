@@ -304,23 +304,6 @@ nav button.active {
 }
 
 
-/* 작은 화면에서는 텍스트 숨김 + 아이콘 크기 축소 */
-@media (max-width: 768px) {
-    .social-links span em {
-        display: none;
-    }
-
-    .social-links i.ico {
-        width: 24px;
-        height: 24px;
-    }
-
-    .social-links span {
-        gap: 0; /* 텍스트가 없으니 간격도 제거 */
-    }
-}
-
-
 .ico {
     display: inline-block;
     width: 50px;

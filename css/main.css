@@ -182,7 +182,7 @@ hr {
 
 .tit_wrap {
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.85);
