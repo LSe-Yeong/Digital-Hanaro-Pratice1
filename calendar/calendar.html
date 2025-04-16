@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            all:unset;
+        }
+        hr{
+            margin: 20px 0px;
+            height: 0.5px;
+            border: none;
+            background-color: rgba(66,66,66,0.3);
+        }
+
+        .calendar-container{
+            width: 800px;
+            margin: 0px auto;
+        }
+        
+        .date-set {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .date-set div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0px 15px;
+        }
+
+        .date-set div span{
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .date-set div span.blue{
+            color:blue;
+        }
+
+        .date-set div span.red{
+            color:red;
+        }
+
+        /* .date-set div span:hover {
+            background-color: red;
+        } */
+
+
+        .date-set .date:hover {
+            background-color: lightgray;
+            display: inline-block;
+            border-radius: 15px;
+        }
+
+        .date-set .date.selected {
+            background-color: black;
+            color: white !important;
+            border-radius: 15px;
+        }
+
+        .date.blue {
+            color: blue;
+        }
+
+        .date.red {
+            color: red;
+        }
+
+        .date-set div .date{
+            width: 25px;
+            height: 25px;
+            /* background-color: black;
+            border-radius: 15px;
+            color: white; */
+        }
+
+
+        .main-content {
+            height: 500px;
+            margin: 20px 0px;
+            background-color: #333333;
+        }
+
+    </style>
+    <script>
+        let dateContents
+        let matchDate = ["일","월","화","수","목","금","토"]
+        let selected
+        window.onload = () => {
+            dateContents = document.querySelectorAll(".date-set div span")
+            let todayDay = new Date().getDay()
+            let todayDate = new Date().getDate()
+            selected = [dateContents[0],dateContents[1]]
+
+            changeSelectedStyle(selected)
+
+            for(let i=2;i<dateContents.length;i=i+2){
+                dateContents[i].textContent=todayDate+1
+                todayDate+=1
+
+                const dayName = numToDate((todayDay + 1) % 7)
+                dateContents[i+1].textContent = dayName
+
+                if (dayName === "토") {
+                    dateContents[i].classList.add("blue")
+                    dateContents[i+1].classList.add("blue")
+                }
+                if (dayName === "일") {
+                    dateContents[i].classList.add("red")
+                    dateContents[i+1].classList.add("red")
+                }
+                todayDay=(todayDay+1)%7
+            }
+
+            for(let i=0; i<dateContents.length;i=i+2){
+                dateContents[i].addEventListener("click",function(){
+                    selected = [dateContents[i],dateContents[i+1]]
+                    console.log(selected)
+                    changeSelectedStyle(selected)
+                })
+                // dateContents[i].addEventListener("mouseenter",function(){
+                //     dateContents[i].style.borderRadius = "15px"
+                //     dateContents[i].style.backgroundColor = "lightgray"
+                // })
+                // dateContents[i].addEventListener("mouseleave",function(){
+                //     dateContents[i].style.borderRadius = "0px"
+                //     dateContents[i].style.backgroundColor = ""
+                // })
+            }
+        }
+
+        function numToDate(n) {
+            return matchDate[n]
+        }
+        
+        // function changeSelectedStyle(selected){
+        //     resetStyle()
+        //     selected[0].style.backgroundColor = "black"
+        //     selected[0].style.color = "white"
+        //     selected[0].style.borderRadius = "15px"
+        // }
+
+        // function resetStyle() {
+        //     for(let i=0;i<dateContents.length;i=i+2){
+        //         dateContents[i].style.backgroundColor="white"
+        //         dateContents[i].style.color = "black"
+        //         dateContents[i].borderRadius = "0px"
+        //     }
+        // }
+
+        function changeSelectedStyle(selected){
+            resetStyle()
+            selected[0].classList.add("selected")
+        }
+
+        function resetStyle() {
+            for(let i=0;i<dateContents.length;i=i+2){
+                dateContents[i].classList.remove("selected")
+            }
+        }
+                
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="calendar-container">
+            <div class="explanation">
+                <span><strong>전국</strong> 축제·행사 어디까지 가봤니?</span>
+            </div>
+            <hr>
+            <div class="date-set">
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+                <div>
+                    <span class="date">16</span>
+                    <span>오늘</span>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="slider-container">
+                <div class="slider">
+                  <div class="slide">Slide 1</div>
+                  <div class="slide">Slide 2</div>
+                  <div class="slide">Slide 3</div>
+                </div>
+              </div>
+              
+              <div class="controls">
+                <button id="prev">◀</button>
+                <button id="next">▶</button>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
