@@ -168,7 +168,7 @@ function moveAuto(){
         else{
             moveSlide(1)
         }
-    },3000)
+    },5000)
 }
 
 function moveSlide(direction) {
