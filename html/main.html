@@ -5,209 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>지역 메인 | 대한민국 구석구석</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <style>
-        body {
-            all: unset;
-        }
-
-        h2 {
-            margin: 0px;
-        }
-
-        .header-top {
-            height: 90px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            border-bottom: 1px solid rgba(66, 66, 66, 0.2);
-        }
-
-        .logo-div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo {
-            margin-left: 30px;
-            font-size: 23px;
-        }
-
-        .home {
-            color: black;
-            font-weight: 700;
-        }
-
-        .home::after {
-            content: "";
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            border-radius: 50px;
-            position: relative;
-            bottom: 18px;
-            left: 5px;
-            background-color: black;
-        }
-
-        nav span {
-            margin-left: 25px;
-            font-size: 20px;
-            color: #666666
-        }
-
-        nav span:hover {
-            color: black;
-            font-weight: 700;
-            visibility: visible;
-        }
-
-        nav span:hover::after {
-            content: "";
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            border-radius: 50px;
-            position: relative;
-            bottom: 18px;
-            left: 5px;
-            background-color: black;
-        }
-
-        body {
-            all: unset
-        }
-
-        h3 {
-            margin: 0px;
-        }
-
-        hr {
-            height: 0.5px;
-            border: none;
-            background-color: rgba(66, 66, 66, 0.1);
-        }
-
-        .footer {
-            height: 380px;
-            background-color: #f7f7f7;
-        }
-
-        .content {
-            width: 1000px;
-            margin: 0px auto;
-        }
-
-        .intro-1 {
-            padding-top: 10px;
-            text-align: center;
-        }
-
-        .sns {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        .sns span {
-            margin: 20px 20px;
-        }
-
-        .imgs {
-            margin: 20px 0px;
-        }
-
-        .imgs img {
-            margin: 0px 8px;
-            border-radius: 5px;
-        }
-
-        .metas {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin: 20px 0px;
-        }
-
-        .metas span {
-            font-size: 13px;
-            margin: 0px 17px;
-            color: #666666
-        }
-
-        .metas2 {
-            display: flex;
-            flex-direction: row;
-            margin: 20px 0px;
-        }
-
-        .metas2 span {
-            font-size: 13px;
-            margin: 0px 17px;
-            color: #666666
-        }
-
-        .companies {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px 0px;
-        }
-
-        .companies div {
-            display: flex;
-            align-items: center;
-        }
-
-        .companies img {
-            margin: 0px 10px
-        }
-
-        .swiper-slide {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            height: 90%;
-        }
-
-        .swiper-slide img {
-            margin: 30px;
-            max-width: 90%;
-            height: 90%;
-            object-fit: cover;
-        }
-
-        .tit_wrap {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.85);
-            padding: 10px 16px;
-            border-radius: 8px;
-            display: block;
-            max-width: 90%;
-        }
-
-        .tit_wrap em,
-        .tit_wrap strong {
-            display: block;
-            color: #333;
-            word-break: keep-all;
-            line-height: 1.4;
-        }
-
-        .swiper-container {
-            height: 500px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/headerSearchForm.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/headerLanguageSelect.css">
 </head>
 <body>
-
 
 <header class="header">
     <div class="header-top">
@@ -226,30 +30,46 @@
         </div>
         <nav class="navbar">
             <span class="home">홈</span>
-            <span>테마</span>
-            <span>지역</span>
-            <span>여행코스</span>
+            <span><a href="https://korean.visitkorea.or.kr/main/theme.do">테마</a></span>
+            <span><a href="https://korean.visitkorea.or.kr/main/area.do">지역</a></span>
+            <span><a href="https://korean.visitkorea.or.kr/list/travelcourse.do?service=cs">여행코스</a></span>
             <span><a href="visitInformation.html">여행정보</a></span>
-            <span>여행혜택</span>
+            <span><a href="https://korean.visitkorea.or.kr/list/travelbenefit.do?service=event">여행혜택</a></span>
         </nav>
-        <div>
-            <span>아이콘 1</span>
-            <span>아이콘 2</span>
-            <span>아이콘 3</span>
+        <div class="form">
+            <button class="search" onclick="toggleSearchForm()"><i class="ico ico-search"></i></button>
+            <div class="lang_layer">
+                <button class="lang_btn" onclick="toggleLangMenu()"><i class="ico ico-language"></i></button>
+                <ul class="lang_menu">
+                    <li><a href="main.html" title="현재창">한국어</a></li>
+                    <li>
+                        <a href="https://english.visitkorea.or.kr/svc/main/index.do?utm_source=ko_visitkorea&utm_medium=landing_url&utm_campaign=vk_main_enu"
+                           target="_blank" title="새창">ENGLISH</a></li>
+                    <li>
+                        <a href="https://japanese.visitkorea.or.kr/svc/main/index.do?utm_source=ko_visitkorea&utm_medium=landing_url&utm_campaign=vk_main_jpn"
+                           target="_blank" title="새창">日本語</a></li>
+                    <li>
+                        <a href="https://chinese.visitkorea.or.kr/svc/main/index.do?utm_source=ko_visitkorea&utm_medium=landing_url&utm_campaign=vk_main_chs"
+                           target="_blank" title="새창">中文</a></li>
+                </ul>
+            </div>
+            <button class="menu" onclick="alert('전체 메뉴보기는 준비중입니다.')"><i class="ico ico-menu"></i></button>
         </div>
     </div>
-    <!-- <div class="header-hidden">
-        <div class="t-course">
-            <span>추천 코스</span> <br>
-            <span>AI 톡톡 플래너</span>
-        </div>
-    </div> -->
 </header>
 
-<div class="main_showcase" style="background: #d3f0d1;">
+<div class="search_wrap" id="searchWrap">
+    <button type="button" class="page_back" onclick="closeSearchForm();">뒤로</button>
+    <div class="form">
+        <input type="text" placeholder="어디로, 어떤 여행을 떠날 예정인가요?">
+        <button onclick="alert('검색 실행')">검색</button>
+    </div>
+</div>
+
+<div class="main_showcase">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" style="background: rgba(154,205,50,0.9)">
                 <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=e492a38e-2ecc-4835-bba7-39ee75dbb53f&mode=raw"
                      alt="남원에서 만끽하는 아날로그 여행">
                 <div class="tit_wrap">
@@ -257,7 +77,7 @@
                     <strong>남원에서 만끽하는 아날로그 여행</strong>
                 </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" style="background: rgba(255,218,185,0.9)">
                 <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=92a8bc11-3d45-4ab0-a8d6-6228fce2eb2f&amp;mode=raw"
                      alt="지금 마시러 갑니다, 전국 앙죠장 투어">
                 <div class="tit_wrap">
@@ -265,7 +85,7 @@
                     <strong style="color:#3d3d3d">지금 마시러 갑니다, 전국 양조장 투어 4</strong>
                 </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" style="background: rgba(255,166,212,0.9)">
                 <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=27993154-6699-4c0e-b052-f360e68d21be&amp;mode=raw"
                      alt="겹겹이 피어난 봄🌸 서산 벚꽃 여행 코스">
                 <div class="tit_wrap">
@@ -273,7 +93,7 @@
                     <strong style="color:#3d3d3d">겹겹이 피어난 봄🌸 서산 벚꽃 여행 코스</strong>
                 </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" style="background: lightblue">
                 <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=73793a63-ef87-46b6-ae7c-659dd31efaaf&amp;mode=raw"
                      alt="4월은 지구의 달🌎 나의 에코 감수성 테스트">
                 <div class="tit_wrap">
@@ -281,7 +101,7 @@
                     <strong style="color:#3d3d3d">4월은 지구의 달🌎 나의 에코 감수성 테스트</strong>
                 </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" style="background: lightpink">
                 <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=a5917998-959b-48dd-b6ab-f0f0c9fc5706&amp;mode=raw"
                      alt="데이터로 본 지역별 핫플레이스! 뜨는 도시 7">
                 <div class="tit_wrap">
@@ -300,22 +120,43 @@
         <div>
             <h3 class="intro-1">👍🏻 대한민국 구석구석을 SNS에서 만나보세요!</h3>
         </div>
-        <div class="sns">
-            <span>블로그</span>
-            <span>포스트</span>
-            <span>페이스북</span>
-            <span>엑스</span>
-            <span>카카오스토리</span>
-            <span>인스타그램</span>
-            <span>네이버 밴드</span>
+        <div class="social-links">
+            <span>
+                <i class="ico ico_blog"></i>
+                <em>블로그</em>
+            </span>
+            <span>
+                <i class="ico ico_post"></i>
+                <em>포스트</em>
+            </span>
+            <span>
+                <i class="ico ico_facebook"></i>
+                <em>Facebook</em>
+            </span>
+            <span>
+                <i class="ico ico_x"></i>
+                <em>X</em>
+            </span>
+            <span>
+                <i class="ico ico_kakao"></i>
+                <em>카카오</em>
+            </span>
+            <span>
+                <i class="ico ico_instagram"></i>
+                <em>Instagram</em>
+            </span>
+            <span>
+                <i class="ico ico_band"></i>
+                <em>Band</em>
+            </span>
         </div>
         <hr>
         <div class="imgs">
-            <img src="global/img/pic_0.png" width="180px" height="70px">
-            <img src="global/img/pic_1.png" width="180px" height="70px">
-            <img src="global/img/pic_2.png" width="180px" height="70px">
-            <img src="global/img/pic_3.png" width="180px" height="70px">
-            <img src="global/img/pic_4.png" width="180px" height="70px">
+            <img src="../global/img/pic_0.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_1.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_2.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_3.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_4.png" width="180px" height="70px" alt="">
         </div>
         <div class="metas">
             <span>개인정보처리방침</span>
@@ -339,16 +180,16 @@
         <div class="companies">
             <span>한국관광공사</span>
             <div>
-                <img src="global/img/com_1.png" width="120px" height="40px">
-                <img src="global/img/com_2.png" width="120px" height="40px">
-                <img src="global/img/com_3.png" width="120px" height="40px">
+                <img src="../global/img/com_1.png" width="120px" height="40px" alt="tourAPI">
+                <img src="../global/img/com_2.png" width="120px" height="40px" alt="한국관광공사">
+                <img src="../global/img/com_3.png" width="120px" height="40px" alt="문화체육관광부">
             </div>
         </div>
     </div>
 </footer>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="mainSwiper.js"></script>
-
+<script src="../js/mainSwiper.js"></script>
+<script src="../js/headerSearchForm.js"></script>
 </body>
 </html>

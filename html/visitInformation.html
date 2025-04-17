@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대한민국 구석구석 - 여행정보</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/visitInformation.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/headerSearchForm.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/headerLanguageSelect.css">
+    <style>
+        .category {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+        }
+
+        .category a {
+            text-decoration: none;
+            background: #eee;
+            border-radius: 20px;
+            padding: 10px 16px;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .category a.active {
+            background-color: lightblue;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-top">
+        <div class="logo-div">
+            <h1 class="logo">
+                <a class="svgLogo" href="main.html">
+                    <svg id="pathicon1" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="280px"
+                         height="80px" viewBox="0 0 510 86" style="enable-background:new 0 0 510 86;"
+                         xml:space="preserve"><path class="text-path" d="M483.7,49.5h-39.2c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h28.3v17c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V50.6C484.8,50,484.3,49.5,483.7,49.5z M453,41.3c3.3,3.8,8,5.4,13.7,5.4h1.8c0.9,0,1.7-0.7,1.7-1.7c0-0.9-0.7-1.7-1.7-1.7h0c-4.6,0-9.4-2.4-9.4-7.7V20.8c0-0.9-0.8-1.7-1.7-1.7h-8.7c-0.9,0-1.7,0.8-1.7,1.7v14.7c0,5.4-4.8,7.7-9.4,7.7h0c0,0-18.7,0-18.7,0c4.8-2,10.7-6.4,10.7-15.6v-6.8c0-0.9-0.8-1.7-1.7-1.7h-33.7c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h23.3v5.2c0,15.3-7.7,15.6-7.7,15.6h-24.5c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h19.7v23.2c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V46.6h22.3C445,46.6,449.7,45,453,41.3z M483.1,19.1h-8.7c-0.9,0-1.7,0.8-1.7,1.7v8.1h-4c-0.9,0-1.7,0.7-1.7,1.7s0.7,1.7,1.7,1.7h4v12.7c0,0.9,0.8,1.7,1.7,1.7h8.7c0.9,0,1.7-0.8,1.7-1.7V20.8C484.8,19.9,484.1,19.1,483.1,19.1z M467.1,0H351.6c-23.1,0-42,18.3-43,41.2H272C271,18.3,252.1,0,229,0c-23.7,0-43,19.3-43,43c0,23.7,19.3,43,43,43c23.1,0,42-18.3,43-41.2h36.6c1,22.9,19.9,41.2,43,41.2h115.5c23.7,0,43-19.3,43-43C510.1,19.3,490.8,0,467.1,0z M229,82.3c-21.7,0-39.3-17.6-39.3-39.3c0-21.7,17.6-39.3,39.3-39.3c21.7,0,39.3,17.6,39.3,39.3C268.3,64.7,250.7,82.3,229,82.3z M467.1,82.3H351.6c-21.7,0-39.3-17.6-39.3-39.3c0-21.7,17.6-39.3,39.3-39.3h115.5c21.7,0,39.3,17.6,39.3,39.3C506.4,64.7,488.7,82.3,467.1,82.3z M347.5,41.3c3.3,3.8,8,5.4,13.7,5.4h1.8c0.9,0,1.7-0.7,1.7-1.7c0-0.9-0.7-1.7-1.7-1.7h0c-4.6,0-9.4-2.4-9.4-7.7V20.8c0-0.9-0.8-1.7-1.7-1.7h-8.7c-0.9,0-1.7,0.8-1.7,1.7v14.7c0,5.4-4.8,7.7-9.4,7.7h0c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h1.8C339.4,46.6,344.1,45,347.5,41.3z M377.6,19.1h-8.7c-0.9,0-1.7,0.8-1.7,1.7v8.1h-4c-0.9,0-1.7,0.7-1.7,1.7s0.7,1.7,1.7,1.7h4v12.7c0,0.9,0.8,1.7,1.7,1.7h8.7c0.9,0,1.7-0.8,1.7-1.7V20.8C379.3,19.9,378.5,19.1,377.6,19.1z M254.8,43.3h-18c4.8-2,10.7-6.4,10.7-15.7v-6.8c0-0.9-0.8-1.7-1.7-1.7h-33.7c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h23.3v5.2c0,15.3-7.7,15.7-7.7,15.7h-24.5c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h19.7v23.2c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V46.6h19.7c0.9,0,1.7-0.7,1.7-1.7C256.4,44,255.7,43.3,254.8,43.3z M378.1,49.5h-39.2c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h28.3v17c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V50.6C379.3,50,378.8,49.5,378.1,49.5z" stroke="undefined" stroke-width="1"></path>
+                        <path
+                                class="text-path"
+                                d="M66.2,35.2c0-3.3-1.4-6.2-4.2-8h4.1c0.8,0,1.5-0.7,1.5-1.5c0-0.8-0.7-1.5-1.5-1.5h-7.4v-4c0-0.6-0.5-1.1-1.1-1.1H53c-0.6,0-1.1,0.5-1.1,1.1v4h-7.4c-0.8,0-1.5,0.7-1.5,1.5c0,0.8,0.7,1.5,1.5,1.5h4.2c-2.7,1.8-4.2,4.7-4.2,8c0,5.4,3.9,9.8,10.9,9.8C62.4,45.1,66.2,40.7,66.2,35.2z M51.2,35.2c0-3.8,1.5-6.8,4.2-6.8c2.7,0,4.2,3.1,4.2,6.8c0,3.8-1.5,6.8-4.2,6.8C52.7,42.1,51.2,39,51.2,35.2z M35.4,19.6H31c-0.6,0-1.1,0.5-1.1,1.1v10.4h-4.2V21.1c0-0.6-0.5-1.1-1.1-1.1h-4.4c-0.6,0-1.1,0.5-1.1,1.1v21.8c-0.6,0.2-1.3,0.5-2.1,0.6c-0.9,0.2-1.9,0.3-3.1,0.3h-7V24.3H14c0.8,0,1.5-0.7,1.5-1.5c0-0.8-0.7-1.5-1.5-1.5H1c-0.6,0-1.1,0.5-1.1,1.1v23.4c0,0.6,0.5,1.1,1.1,1.1h12.6c1.3,0,2.4-0.1,3.3-0.4c0.9-0.3,1.6-0.6,2.2-1.1v15c0,0.6,0.5,1.1,1.1,1.1H22c2.1,0,3.7-1.6,3.7-3.7V35.1h4.2v25.9c0,0.6,0.5,1.1,1.1,1.1h1.8c2.1,0,3.7-1.6,3.7-3.7V20.7C36.5,20.1,36,19.6,35.4,19.6z M78.5,59H57.8v-9.6c0-0.6-0.5-1.1-1.1-1.1h-4.8c-0.6,0-1.1,0.5-1.1,1.1v11.5c0,0.6,0.5,1.1,1.1,1.1h26.6c0.8,0,1.5-0.7,1.5-1.5C80,59.7,79.3,59,78.5,59z M119,51h1.4c2.5,0,4.5-2,4.5-4.4V20.7c0-0.6-0.5-1.1-1.1-1.1H119c-0.6,0-1.1,0.5-1.1,1.1v29.1C117.9,50.5,118.4,51,119,51z M168.8,36h-5.3c0.5-0.6,0.9-1.6,1.2-3c0.3-1.4,0.5-2.6,0.5-3.8v-6.9c0-0.6-0.5-1.1-1.1-1.1h-27.3c-0.8,0-1.5,0.7-1.5,1.5c0,0.8,0.7,1.5,1.5,1.5h21.4v5.2c0,1.2-0.1,2.4-0.2,3.5c-0.1,1.2-0.3,2.2-0.7,3.1H132c-0.8,0-1.5,0.7-1.5,1.5c0,0.8,0.7,1.5,1.5,1.5h14.7v7.7h-10.1c-0.8,0-1.5,0.7-1.5,1.5c0,0.8,0.7,1.5,1.5,1.5h21.5v11.3c0,0.6,0.5,1.1,1.1,1.1h1.4c2.5,0,4.5-2,4.5-4.4v-9.9c0-0.6-0.5-1.1-1.1-1.1h-10.3v-7.7h15c0.8,0,1.5-0.7,1.5-1.5C170.3,36.6,169.6,36,168.8,36z M84,30.3h-5.5v-9.6c0-0.6-0.5-1.1-1.1-1.1h-4.8c-0.6,0-1.1,0.5-1.1,1.1v29.1c0,0.6,0.5,1.1,1.1,1.1H74c2.5,0,4.5-2,4.5-4.4V33.3H84c0.8,0,1.5-0.7,1.5-1.5C85.5,31,84.8,30.3,84,30.3z M124.8,59h-21.7V48.6c0-0.6-0.5-1.1-1.1-1.1h-4.8c-0.6,0-1.1,0.5-1.1,1.1v12.3c0,0.6,0.5,1.1,1.1,1.1h27.6c0.8,0,1.5-0.7,1.5-1.5C126.3,59.7,125.6,59,124.8,59z M111.8,38.5V22.3c0-0.6-0.5-1.1-1.1-1.1H90.9c-0.6,0-1.1,0.5-1.1,1.1v19.6c0,0.6,0.5,1.1,1.1,1.1h16.4C109.8,42.9,111.8,41,111.8,38.5z M104.8,40h-8V24.2h8V40z"
+                                stroke="undefined" stroke-width="1"></path></svg>
+                </a>
+            </h1>
+        </div>
+        <nav class="navbar">
+            <span class="home">홈</span>
+            <span><a href="https://korean.visitkorea.or.kr/main/theme.do">테마</a></span>
+            <span><a href="https://korean.visitkorea.or.kr/main/area.do">지역</a></span>
+            <span><a href="https://korean.visitkorea.or.kr/list/travelcourse.do?service=cs">여행코스</a></span>
+            <span><a href="visitInformation.html">여행정보</a></span>
+            <span><a href="https://korean.visitkorea.or.kr/list/travelbenefit.do?service=event">여행혜택</a></span>
+        </nav>
+        <div class="form">
+            <button class="search" onclick="toggleSearchForm()"><i class="ico ico-search"></i></button>
+            <div class="lang_layer">
+                <button class="lang_btn" onclick="toggleLangMenu()"><i class="ico ico-language"></i></button>
+                <ul class="lang_menu">
+                    <li><a href="main.html" title="현재창">한국어</a></li>
+                    <li>
+                        <a href="https://english.visitkorea.or.kr/svc/main/index.do?utm_source=ko_visitkorea&utm_medium=landing_url&utm_campaign=vk_main_enu"
+                           target="_blank" title="새창">ENGLISH</a></li>
+                    <li>
+                        <a href="https://japanese.visitkorea.or.kr/svc/main/index.do?utm_source=ko_visitkorea&utm_medium=landing_url&utm_campaign=vk_main_jpn"
+                           target="_blank" title="새창">日本語</a></li>
+                    <li>
+                        <a href="https://chinese.visitkorea.or.kr/svc/main/index.do?utm_source=ko_visitkorea&utm_medium=landing_url&utm_campaign=vk_main_chs"
+                           target="_blank" title="새창">中文</a></li>
+                </ul>
+            </div>
+            <button class="menu" onclick="alert('전체 메뉴보기는 준비중입니다.')"><i class="ico ico-menu"></i></button>
+        </div>
+    </div>
+</header>
+
+<div class="search_wrap" id="searchWrap">
+    <button type="button" class="page_back" onclick="closeSearchForm();">뒤로</button>
+    <div class="form">
+        <input type="text" placeholder="어디로, 어떤 여행을 떠날 예정인가요?">
+        <button onclick="alert('검색 실행')">검색</button>
+    </div>
+</div>
+
+<nav class="category">
+    <a href="#" class="active">전체</a>
+    <a href="tourAttraction.html">관광지</a>
+    <a href="https://app.catchtable.co.kr/">음식점</a>
+    <a href="https://www.yanolja.com/">숙박</a>
+    <a href="https://www.yanolja.com/">체험</a>
+</nav>
+
+
+<main class="container" id="card-container"></main>
+<button class="load-more" onclick="loadMore()">더보기</button>
+
+<footer class="footer">
+    <div class="content">
+        <div>
+            <h3 class="intro-1">👍🏻 대한민국 구석구석을 SNS에서 만나보세요!</h3>
+        </div>
+        <div class="social-links">
+            <span>
+                <i class="ico ico_blog"></i>
+                <em>블로그</em>
+            </span>
+            <span>
+                <i class="ico ico_post"></i>
+                <em>포스트</em>
+            </span>
+            <span>
+                <i class="ico ico_facebook"></i>
+                <em>Facebook</em>
+            </span>
+            <span>
+                <i class="ico ico_x"></i>
+                <em>X</em>
+            </span>
+            <span>
+                <i class="ico ico_kakao"></i>
+                <em>카카오</em>
+            </span>
+            <span>
+                <i class="ico ico_instagram"></i>
+                <em>Instagram</em>
+            </span>
+            <span>
+                <i class="ico ico_band"></i>
+                <em>Band</em>
+            </span>
+        </div>
+        <hr>
+        <div class="imgs">
+            <img src="../global/img/pic_0.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_1.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_2.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_3.png" width="180px" height="70px" alt="">
+            <img src="../global/img/pic_4.png" width="180px" height="70px" alt="">
+        </div>
+        <div class="metas">
+            <span>개인정보처리방침</span>
+            <span>이용약관</span>
+            <span>위치기반서비스 이용약관</span>
+            <span>저작권정책</span>
+            <span>고객서비스헌장</span>
+            <span>전자우편무단수집거부</span>
+            <span>Q&A</span>
+            <span>찾아오시는길</span>
+            <span>사이트맵</span>
+        </div>
+        <div class="metas2">
+            <span>우 26464</span>
+            <span>강원특별자치도 원주시 세계로 10</span>
+            <span>TEL : 033-738-3000</span>
+            <span>사업자등록번호 : 202-81-50707</span>
+            <span>통신판매업신고 : 제2009-서울중구-1234호</span>
+        </div>
+        <hr>
+        <div class="companies">
+            <span>한국관광공사</span>
+            <div>
+                <img src="../global/img/com_1.png" width="120px" height="40px" alt="">
+                <img src="../global/img/com_2.png" width="120px" height="40px" alt="">
+                <img src="../global/img/com_3.png" width="120px" height="40px" alt="">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/visitInformation.js"></script>
+<script src="../js/headerSearchForm.js"></script>
+<script>
+    function toggleLangMenu() {
+        const langLayer = document.querySelector('.lang_layer');
+        langLayer.classList.toggle('show');
+    }
+
+    // 바깥 클릭 시 닫기
+    document.addEventListener('click', function (e) {
+        const langLayer = document.querySelector('.lang_layer');
+        if (!langLayer.contains(e.target)) {
+            langLayer.classList.remove('show');
+        }
+    });
+</script>
+</body>
+</html>
