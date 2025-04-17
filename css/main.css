@@ -33,12 +33,12 @@ body {
 }
 
 .gallery-top .tit_wrap {
-    width: 30%;
+    width: 35%;
     height: 40%;
     padding: 30px;
     background: rgba(255, 255, 255, 0.7);
     display: flex;
-    transform: translateX(-20%) translateY(40%);
+    transform: translateX(-15%) translateY(40%);
     flex-direction: column;
     justify-content: center;
     border-radius: 12px 12px 12px 12px;
@@ -46,8 +46,11 @@ body {
 
 .gallery-top .tit_wrap em {
     font-size: 14px;
-    color: #555;
+    background: black;
+    border-radius: 12px 12px 12px 12px;
+    color: white;
     justify-content: center;
+    text-align: center;
 }
 
 .gallery-top .tit_wrap strong {
@@ -63,6 +66,7 @@ body {
 .gallery-top .tit_wrap a {
     font-size: 16px;
     text-decoration: underline;
+    text-align: center;
 }
 
 .swiper-pagination {
