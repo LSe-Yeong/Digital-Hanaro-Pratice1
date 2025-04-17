@@ -19,7 +19,7 @@ const holeFestivals = [
         dateStart: new Date(2025, 3, 5),
         dateEnd: new Date(2025, 3, 17),
         address: "대구광역시 달서구 두류공원로 200",
-        image: "img/fes-1.jpg"
+        image: "../global/img/fes-1.jpg"
     },
     {
         title: "진해군항제",
@@ -27,7 +27,7 @@ const holeFestivals = [
         dateStart: new Date(2025, 3, 10),
         dateEnd: new Date(2025, 3, 19),
         address: "경상남도 창원시 진해구",
-        image: "img/fes-2.jpg"
+        image: "../global/img/fes-2.jpg"
     },
     {
         title: "서울 봄꽃축제",
@@ -35,7 +35,7 @@ const holeFestivals = [
         dateStart: new Date(2025, 3, 13),
         dateEnd: new Date(2025, 3, 24),
         address: "서울특별시 영등포구 여의도동",
-        image: "img/fes-3.jpg"
+        image: "../global/img/fes-3.jpg"
     },
     {
         title: "부산 다대포 해변 버스킹",
@@ -43,7 +43,7 @@ const holeFestivals = [
         dateStart: new Date(2025, 3, 12),
         dateEnd: new Date(2025, 3, 25),
         address: "부산광역시 사하구 다대동",
-        image: "img/fes-4.jpg"
+        image: "../global/img/fes-4.jpg"
     },
     {
         title: "경주 벚꽃 마라톤",
@@ -51,7 +51,7 @@ const holeFestivals = [
         dateStart: new Date(2025, 3, 10),
         dateEnd: new Date(2025, 3, 16),
         address: "경상북도 경주시 보문로",
-        image: "img/fes-5.jpg"
+        image: "../global/img/fes-5.jpg"
     },
     {
         title: "제주 유채꽃 축제",
@@ -59,7 +59,7 @@ const holeFestivals = [
         dateStart: new Date(2025, 3, 8),
         dateEnd: new Date(2025, 3, 20),
         address: "제주특별자치도 서귀포시 표선면",
-        image: "img/fes-6.jpg"
+        image: "../global/img/fes-6.jpg"
     },
     {
         title: "인천 개항장 문화재 야행",
@@ -67,7 +67,7 @@ const holeFestivals = [
         dateStart: new Date(2025, 3, 18),
         dateEnd: new Date(2025, 3, 27),
         address: "인천광역시 중구 중앙동",
-        image: "img/fes-7.jpg"
+        image: "../global/img/fes-7.jpg"
     },
     {
         title: "춘천 레고랜드 벚꽃축제",
@@ -75,7 +75,7 @@ const holeFestivals = [
         dateStart: new Date(2025, 3, 14),
         dateEnd: new Date(2025, 3, 21),
         address: "강원특별자치도 춘천시 하중도",
-        image: "img/fes-8.jpg"
+        image: "../global/img/fes-8.jpg"
     }
 ];
 
