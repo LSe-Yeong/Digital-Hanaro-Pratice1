@@ -1,27 +1,40 @@
 function toggleLoginPopup() {
-    const mask = document.getElementById("loginMask");
-    const popup = document.getElementById("loginPopup");
-    const isVisible = mask.style.display === "flex";
+    const popup = document.getElementById("loginMask");
 
-    if (isVisible) {
-        mask.style.display = "none";
+    if (popup.style.display === "none" || popup.style.display === "") {
+        popup.style.display = "flex";
     } else {
-        mask.style.display = "flex";
+        popup.style.display = "none";
+        clearLoginForm(); // 닫힐 때 입력값 초기화
     }
 }
 
 function closeLoginPopup(event) {
-    const popup = document.getElementById("loginPopup");
-    // 외부 클릭 시 닫기
-    if (!popup.contains(event.target)) {
+    if (event.target.id === "loginMask") {
         document.getElementById("loginMask").style.display = "none";
+        clearLoginForm(); // 닫힐 때 입력값 초기화
     }
 }
 
-// ESC 키 눌렀을 때 팝업 닫기
 document.addEventListener("keydown", function (event) {
-    const mask = document.getElementById("loginMask");
-    if (event.key === "Escape" && mask.style.display === "flex") {
-        mask.style.display = "none";
+    if (event.key === "Escape") {
+        const popup = document.getElementById("loginMask");
+        if (popup.style.display === "flex") {
+            popup.style.display = "none";
+            clearLoginForm(); // 닫힐 때 입력값 초기화
+        }
     }
+});
+
+// 로그인 폼 초기화 함수
+function clearLoginForm() {
+    const popup = document.querySelector(".login-popup");
+    if (popup) {
+        const inputs = popup.querySelectorAll("input");
+        inputs.forEach(input => input.value = "");
+    }
+}
+
+document.getElementById("btn-login").addEventListener("click", () => {
+    alert("로그인 버튼이 눌렸습니다!");
 });
