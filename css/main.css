@@ -77,7 +77,7 @@ body {
     transform: translateY(10%);
 }
 
-.swiper-progress-bar {
+.slide_progress-bar {
     height: 5px;
     background: #ddd;
     margin: 10px auto;
