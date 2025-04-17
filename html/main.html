@@ -117,13 +117,12 @@
                            target="_blank" title="새창">中文</a></li>
                 </ul>
             </div>
-            <!-- 사용자 아이콘 (헤더 등 원하는 위치에 배치) -->
+
             <button class="user-icon" onclick="toggleLoginPopup()">
                 <i class="ico ico-user"></i>
             </button>
 
-            <!-- 배경 마스크 + 팝업 -->
-            <div class="login-mask" id="loginMask" onclick="closeLoginPopup(event)">
+            <div class="login-mask" id="loginMask" style="display: none;" onclick="closeLoginPopup(event)">
                 <div class="login-popup" id="loginPopup">
                     <div class="popup-content">
                         <h3>로그인</h3>
@@ -309,6 +308,15 @@
             document.getElementById("loginMask").style.display = "none";
         }
     }
+
+    // ESC 키 눌렀을 때 팝업 닫기
+    document.addEventListener("keydown", function (event) {
+        const mask = document.getElementById("loginMask");
+        if (event.key === "Escape" && mask.style.display === "flex") {
+            mask.style.display = "none";
+        }
+    });
+
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
