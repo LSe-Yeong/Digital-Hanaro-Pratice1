@@ -123,57 +123,57 @@ hr {
 }
 
 .ico_blog {
-    background-image: url('../global/icon/ico_blog_black.png');
+    background-image: url('../global/icon/FooterSns/ico_blog_black.png');
 }
 
 .ico_blog:hover {
-    background-image: url('../global/icon/ico_blog.png');
+    background-image: url('../global/icon/FooterSns/ico_blog.png');
 }
 
 .ico_post {
-    background-image: url('../global/icon/ico_post_black.png');
+    background-image: url('../global/icon/FooterSns/ico_post_black.png');
 }
 
 .ico_post:hover {
-    background-image: url('../global/icon/ico_post.png');
+    background-image: url('../global/icon/FooterSns/ico_post.png');
 }
 
 .ico_facebook {
-    background-image: url('../global/icon/ico_facebook_black.png');
+    background-image: url('../global/icon/FooterSns/ico_facebook_black.png');
 }
 
 .ico_facebook:hover {
-    background-image: url('../global/icon/ico_facebook.png');
+    background-image: url('../global/icon/FooterSns/ico_facebook.png');
 }
 
 .ico_x {
-    background-image: url('../global/icon/ico_x_black.png');
+    background-image: url('../global/icon/FooterSns/ico_x_black.png');
 }
 
 .ico_x:hover {
-    background-image: url('../global/icon/ico_x.png');
+    background-image: url('../global/icon/FooterSns/ico_x.png');
 }
 
 .ico_kakao {
-    background-image: url('../global/icon/ico_kakao_black.png');
+    background-image: url('../global/icon/FooterSns/ico_kakao_black.png');
 }
 
 .ico_kakao:hover {
-    background-image: url('../global/icon/ico_kakao.png');
+    background-image: url('../global/icon/FooterSns/ico_kakao.png');
 }
 
 .ico_instagram {
-    background-image: url('../global/icon/ico_instagram_black.png');
+    background-image: url('../global/icon/FooterSns/ico_instagram_black.png');
 }
 
 .ico_instagram:hover {
-    background-image: url('../global/icon/ico_instagram.png');
+    background-image: url('../global/icon/FooterSns/ico_instagram.png');
 }
 
 .ico_band {
-    background-image: url('../global/icon/ico_band_black.png');
+    background-image: url('../global/icon/FooterSns/ico_band_black.png');
 }
 
 .ico_band:hover {
-    background-image: url('../global/icon/ico_band.png');
+    background-image: url('../global/icon/FooterSns/ico_band.png');
 }
