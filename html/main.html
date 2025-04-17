@@ -10,6 +10,71 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/headerLanguageSelect.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .ico-user {
+            background-image: url("../global/icon/Header/ico_user.png");
+            width: 30px;
+            height: 30px;
+        }
+
+        .user-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            transform: translateY(-25%);
+        }
+
+        .login-mask {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-popup {
+            background: white;
+            border-radius: 10px;
+            padding: 30px 20px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .popup-content input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .btn-login {
+            width: 80%;
+            padding: 10px;
+            background: #3da5f5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-close {
+            background: none;
+            border: none;
+            color: #888;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+
+    </style>
+
 </head>
 <body>
 <header class="header">
@@ -52,6 +117,24 @@
                            target="_blank" title="새창">中文</a></li>
                 </ul>
             </div>
+            <!-- 사용자 아이콘 (헤더 등 원하는 위치에 배치) -->
+            <button class="user-icon" onclick="toggleLoginPopup()">
+                <i class="ico ico-user"></i>
+            </button>
+
+            <!-- 배경 마스크 + 팝업 -->
+            <div class="login-mask" id="loginMask" onclick="closeLoginPopup(event)">
+                <div class="login-popup" id="loginPopup">
+                    <div class="popup-content">
+                        <h3>로그인</h3>
+                        <input type="text" placeholder="아이디" />
+                        <input type="password" placeholder="비밀번호" />
+                        <button class="btn-login">로그인</button>
+                        <button class="btn-close" onclick="toggleLoginPopup()">닫기</button>
+                    </div>
+                </div>
+            </div>
+
             <button class="menu" onclick="alert('전체 메뉴보기는 준비중입니다.')"><i class="ico ico-menu"></i></button>
         </div>
     </div>
@@ -206,7 +289,28 @@
         </div>
     </div>
 </footer>
+<script>
+    function toggleLoginPopup() {
+        const mask = document.getElementById("loginMask");
+        const popup = document.getElementById("loginPopup");
+        const isVisible = mask.style.display === "flex";
 
+        if (isVisible) {
+            mask.style.display = "none";
+        } else {
+            mask.style.display = "flex";
+        }
+    }
+
+    function closeLoginPopup(event) {
+        const popup = document.getElementById("loginPopup");
+        // 외부 클릭 시 닫기
+        if (!popup.contains(event.target)) {
+            document.getElementById("loginMask").style.display = "none";
+        }
+    }
+
+</script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="../js/headerSearchForm.js"></script>
 <script src="../js/mainSwiper.js"></script>
