@@ -1,49 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>대한민국 구석구석 - 여행정보</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/visitInformation.css">
+    <title>추천 여행 리스트 - 대한민국 구석구석</title>
+
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/headerSearchForm.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/headerLanguageSelect.css">
-    <style>
-        .category {
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 15px;
-        }
-
-        .category a {
-            text-decoration: none;
-            background: #eee;
-            border-radius: 20px;
-            padding: 10px 16px;
-            color: #333;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .category a.active {
-            background-color: lightblue;
-            color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/travelInformation.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-
 <header class="header">
     <div class="header-top">
         <div class="logo-div">
             <h1 class="logo">
                 <a class="svgLogo" href="main.html">
-                    <svg id="pathicon1" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="280px"
-                         height="80px" viewBox="0 0 510 86" style="enable-background:new 0 0 510 86;"
+                    <svg id="pathicon1" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150px"
+                         height="60px" viewBox="0 0 510 86" style="enable-background:new 0 0 510 86;"
                          xml:space="preserve"><path class="text-path" d="M483.7,49.5h-39.2c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h28.3v17c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V50.6C484.8,50,484.3,49.5,483.7,49.5z M453,41.3c3.3,3.8,8,5.4,13.7,5.4h1.8c0.9,0,1.7-0.7,1.7-1.7c0-0.9-0.7-1.7-1.7-1.7h0c-4.6,0-9.4-2.4-9.4-7.7V20.8c0-0.9-0.8-1.7-1.7-1.7h-8.7c-0.9,0-1.7,0.8-1.7,1.7v14.7c0,5.4-4.8,7.7-9.4,7.7h0c0,0-18.7,0-18.7,0c4.8-2,10.7-6.4,10.7-15.6v-6.8c0-0.9-0.8-1.7-1.7-1.7h-33.7c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h23.3v5.2c0,15.3-7.7,15.6-7.7,15.6h-24.5c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h19.7v23.2c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V46.6h22.3C445,46.6,449.7,45,453,41.3z M483.1,19.1h-8.7c-0.9,0-1.7,0.8-1.7,1.7v8.1h-4c-0.9,0-1.7,0.7-1.7,1.7s0.7,1.7,1.7,1.7h4v12.7c0,0.9,0.8,1.7,1.7,1.7h8.7c0.9,0,1.7-0.8,1.7-1.7V20.8C484.8,19.9,484.1,19.1,483.1,19.1z M467.1,0H351.6c-23.1,0-42,18.3-43,41.2H272C271,18.3,252.1,0,229,0c-23.7,0-43,19.3-43,43c0,23.7,19.3,43,43,43c23.1,0,42-18.3,43-41.2h36.6c1,22.9,19.9,41.2,43,41.2h115.5c23.7,0,43-19.3,43-43C510.1,19.3,490.8,0,467.1,0z M229,82.3c-21.7,0-39.3-17.6-39.3-39.3c0-21.7,17.6-39.3,39.3-39.3c21.7,0,39.3,17.6,39.3,39.3C268.3,64.7,250.7,82.3,229,82.3z M467.1,82.3H351.6c-21.7,0-39.3-17.6-39.3-39.3c0-21.7,17.6-39.3,39.3-39.3h115.5c21.7,0,39.3,17.6,39.3,39.3C506.4,64.7,488.7,82.3,467.1,82.3z M347.5,41.3c3.3,3.8,8,5.4,13.7,5.4h1.8c0.9,0,1.7-0.7,1.7-1.7c0-0.9-0.7-1.7-1.7-1.7h0c-4.6,0-9.4-2.4-9.4-7.7V20.8c0-0.9-0.8-1.7-1.7-1.7h-8.7c-0.9,0-1.7,0.8-1.7,1.7v14.7c0,5.4-4.8,7.7-9.4,7.7h0c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h1.8C339.4,46.6,344.1,45,347.5,41.3z M377.6,19.1h-8.7c-0.9,0-1.7,0.8-1.7,1.7v8.1h-4c-0.9,0-1.7,0.7-1.7,1.7s0.7,1.7,1.7,1.7h4v12.7c0,0.9,0.8,1.7,1.7,1.7h8.7c0.9,0,1.7-0.8,1.7-1.7V20.8C379.3,19.9,378.5,19.1,377.6,19.1z M254.8,43.3h-18c4.8-2,10.7-6.4,10.7-15.7v-6.8c0-0.9-0.8-1.7-1.7-1.7h-33.7c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h23.3v5.2c0,15.3-7.7,15.7-7.7,15.7h-24.5c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h19.7v23.2c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V46.6h19.7c0.9,0,1.7-0.7,1.7-1.7C256.4,44,255.7,43.3,254.8,43.3z M378.1,49.5h-39.2c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h28.3v17c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V50.6C379.3,50,378.8,49.5,378.1,49.5z" stroke="undefined" stroke-width="1"></path>
                         <path
                                 class="text-path"
@@ -90,17 +65,41 @@
     </div>
 </div>
 
-<nav class="category">
-    <a href="#" class="active">전체</a>
-    <a href="tourAttraction.html">관광지</a>
-    <a href="https://app.catchtable.co.kr/">음식점</a>
-    <a href="https://www.yanolja.com/">숙박</a>
-    <a href="https://www.yanolja.com/">체험</a>
-</nav>
+<div class="container">
+    <div class="content">
+        <div class="filters">
+            <div class="title">
+                <h2>여행지</h2>
+                <br>
+                <span id="selected-category">#전체</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="list-header">
+            <div class="list-info">
+                <div id="total-count">총 0건</div>
+            </div>
+
+            <div class="sort-options">
+                <button class="sort-btn active" data-sort="latest">최신순</button>
+                <button class="sort-btn" data-sort="popularity">인기순</button>
+                <button class="sort-btn" data-sort="name">이름순</button>
+            </div>
+        </div>
 
 
-<main class="container" id="card-container"></main>
-<button class="load-more" onclick="loadMore()">더보기</button>
+        <div class="list" id="list-container"></div>
+
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <div class="sidebar">
+        <h3>카테고리</h3>
+        <div class="category" id="category-container"></div>
+    </div>
+</div>
 
 <footer class="footer">
     <div class="content">
@@ -167,29 +166,16 @@
         <div class="companies">
             <span>한국관광공사</span>
             <div>
-                <img src="../global/img/com_1.png" width="120px" height="40px" alt="">
-                <img src="../global/img/com_2.png" width="120px" height="40px" alt="">
-                <img src="../global/img/com_3.png" width="120px" height="40px" alt="">
+                <img src="../global/img/com_1.png" width="120px" height="40px" alt="tourAPI">
+                <img src="../global/img/com_2.png" width="120px" height="40px" alt="한국관광공사">
+                <img src="../global/img/com_3.png" width="120px" height="40px" alt="문화체육관광부">
             </div>
         </div>
     </div>
 </footer>
 
-<script src="../js/visitInformation.js"></script>
 <script src="../js/headerSearchForm.js"></script>
-<script>
-    function toggleLangMenu() {
-        const langLayer = document.querySelector('.lang_layer');
-        langLayer.classList.toggle('show');
-    }
+<script src="../js/travelInformation.js"></script>
 
-    // 바깥 클릭 시 닫기
-    document.addEventListener('click', function (e) {
-        const langLayer = document.querySelector('.lang_layer');
-        if (!langLayer.contains(e.target)) {
-            langLayer.classList.remove('show');
-        }
-    });
-</script>
 </body>
 </html>
