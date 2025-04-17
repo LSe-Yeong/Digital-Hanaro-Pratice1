@@ -1,0 +1,242 @@
+body{
+    all:unset;
+}
+
+h2{
+    margin: 0px;
+}
+hr{
+    margin: 20px 0px;
+    height: 0.5px;
+    border: none;
+    background-color: rgba(66,66,66,0.3);
+}
+
+.marker{
+    width: 60px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    top: 35px;
+    left: 375px;
+    border: 1px solid rgba(66,66,66,0.3);
+    border-radius: 15px;
+}
+
+.calendar-container{
+    width: 800px;
+    margin: 0px auto;
+}
+
+.date-set {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.date-set div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px 15px;
+}
+
+.date-set div span{
+    text-align: center;
+    font-size: 14px;
+}
+
+.date-set div span.blue{
+    color:blue;
+}
+
+.date-set div span.red{
+    color:red;
+}
+
+/* .date-set div span:hover {
+    background-color: red;
+} */
+
+
+.date-set .date:hover {
+    background-color: lightgray;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+.date-set .date.selected {
+    background-color: black;
+    color: white !important;
+    border-radius: 15px;
+}
+
+.date.blue {
+    color: blue;
+}
+
+.date.red {
+    color: red;
+}
+
+.date-set div .date{
+    width: 25px;
+    height: 25px;
+    /* background-color: black;
+    border-radius: 15px;
+    color: white; */
+}
+
+
+.main-content {
+    height: 540px;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+}
+
+.carousel-container {
+height: 500px;
+position: relative;
+margin: auto;
+overflow: hidden;
+display: flex;
+align-items: center;
+background-color: #222;
+border-radius: 10px;
+}
+
+.carousel-track {
+overflow: hidden;
+width: 1200px;
+margin: 0px auto;
+}
+
+.carousel-slide {
+display: flex;
+transition: transform 0.5s ease;
+}
+
+.card {
+    display: flex;
+    min-width: 700px;
+    height: 400px;
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: scale(0.9);
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+.card.active {
+transform: scale(1.05);
+opacity: 1;
+z-index: 2;
+}
+
+.card.fake {
+    background-color: #222;
+}
+
+.arrow-left{
+background: none;
+border: none;
+color: white;
+font-size: 2rem;
+cursor: pointer;
+z-index: 10;
+}
+
+.arrow-right{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 340px; /* 원하는 높이 */
+    margin: auto 40px;
+    background-color: rgba(66,66,66,0.3);
+}
+
+.title {
+    margin-top: 28px;
+}
+
+.day-place{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.day{
+    width: 150px;
+}
+
+.place{
+    width: 150px;
+}
+
+.button{
+    margin-top: 40px;
+}
+
+.goto {
+    width: 140px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+}
+.search-path{
+    width: 140px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    margin : 0px 10px
+}
+
+.indicators{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    color: white;
+    background-color: #222;
+}
+
+.indicators button {
+    width: 15px;
+    height: 15px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    background-color: #222;
+    margin : 0px 10px
+}
+
+.indicators button.selected{
+   background-color: white;
+}
+
+.slide-bottom {
+    width: 1320px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
