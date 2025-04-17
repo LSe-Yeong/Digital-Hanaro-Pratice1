@@ -29,6 +29,7 @@ body {
 .gallery-top .swiper-slide img {
     width: 45%;
     height: 90%;
+    border-radius: 12px 12px 12px 12px;
     object-fit: cover;
 }
 
