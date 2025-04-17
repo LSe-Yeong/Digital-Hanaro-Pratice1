@@ -114,10 +114,15 @@ window.onload = () => {
     }
 
     for(let i=0; i<dateContents.length;i=i+2){
-        dateContents[i].addEventListener("click",function(){
+        dateContents[i].addEventListener("click",function(){ 
             selected = [dateContents[i],dateContents[i+1]]
-            changeSelectedStyle(selected)
             festivals = getPossibleFestival(selected[0].textContent)
+            if(festivals.length==0) {
+                alert("해당 날짜에 진행되는 행사가 존재하지 않습니다.")
+                return 
+            }
+            
+            changeSelectedStyle(selected)
             loadCards()
 
             indicators[currentIndex].classList.remove("selected")
@@ -336,15 +341,26 @@ function loadCards() {
     fakeCardStart.classList.add("card", "fake");
     slide.appendChild(fakeCardStart);
 
-    festivals.forEach(festival => {
-        const card = createCard(festival);
-        slide.appendChild(card);
-    });
+    const arr = makeRandomArray(festivals.length)
+    for(const i of arr) {
+        const card = createCard(festivals[i])
+        slide.appendChild(card)
+    }
 
     const fakeCardEnd = document.createElement("div");
     fakeCardEnd.classList.add("card", "fake");
     slide.appendChild(fakeCardEnd);
     
+}
+
+function makeRandomArray(len) {
+    const arr = Array.from({ length: len }, (_, i) => i); // [0, 1, 2, 3, 4, 5]
+
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]]; // swap
+    }
+    return arr
 }
 
 const getPossibleFestival = (day) => {
