@@ -85,9 +85,12 @@
 
 
         .main-content {
-            height: 500px;
+            height: 540px;
             margin: 20px 0px;
-            background-color: #333333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #222;
         }
 
         .carousel-container {
@@ -98,7 +101,6 @@
         display: flex;
         align-items: center;
         background-color: #222;
-        padding: 20px;
         border-radius: 10px;
         }
 
@@ -203,6 +205,26 @@
             margin : 0px 10px
         }
 
+        .indicators{
+            height: 70px;
+            color: white;
+            background-color: #222;
+        }
+
+        .indicators button {
+            width: 15px;
+            height: 15px;
+            color: white;
+            border: 1px solid white;
+            border-radius: 15px;
+            background-color: #222;
+            margin : 0px 10px
+        }
+
+        .indicators button.selected{
+           background-color: white;
+        }
+
     </style>
 
     <script>
@@ -215,6 +237,7 @@
         let cardWidth
         let leftArrow
         let rightArrow
+        let indicators 
 
         const holeFestivals = [
             {
@@ -320,28 +343,35 @@
                     festivals = getPossibleFestival(selected[0].textContent)
                     loadCards()
 
+                    indicators[currentIndex].classList.remove("selected")
+
                     currentIndex = 0;
                     slide = document.querySelector(".carousel-slide");
                     cards = document.querySelectorAll(".card");
                     cardWidth = cards[0].offsetWidth + 20; // 카드 + margin-right
                     leftArrow = document.querySelector(".arrow-left")
                     rightArrow = document.querySelector(".arrow-right")
+ 
+                    loadButtons()
 
                     updateArrow()
                     updateActiveCard()
                     moveToCenter(currentIndex + 1); // 가운데 카드 기준으로 이동
 
+                    indicators[currentIndex].classList.add("selected")
                 })
             }
 
             loadCards()
-
+            
             currentIndex = 0;
             slide = document.querySelector(".carousel-slide");
             cards = document.querySelectorAll(".card");
             cardWidth = cards[0].offsetWidth + 20; // 카드 + margin-right
             leftArrow = document.querySelector(".arrow-left")
             rightArrow = document.querySelector(".arrow-right")
+
+            loadButtons()
 
             updateArrow()
             updateActiveCard()
@@ -350,6 +380,8 @@
         }
 
         function moveSlide(direction) {
+                indicators[currentIndex].classList.remove("selected")
+
                 const maxIndex = cards.length - 3; // 3개씩 보이도록 제한
                 currentIndex += direction;
 
@@ -360,6 +392,8 @@
 
                 updateArrow()
                 updateActiveCard()
+
+                indicators[currentIndex].classList.add("selected")
         }
 
         function moveToCenter(centerCardIndex) {
@@ -459,6 +493,38 @@
             `;
 
             return card;
+        }
+
+        function loadButtons() {
+            if(festivals.length==0){
+                const buttonIndicators = document.querySelector(".indicators")
+                buttonIndicators.innerHTML =""
+                return
+            }
+
+            const buttonIndicators = document.querySelector(".indicators")
+            buttonIndicators.innerHTML =""
+
+            console.log(buttonIndicators) 
+            
+            let button = document.createElement("button")
+            button.classList.add("selected")
+            buttonIndicators.appendChild(button)
+
+            for(let i=1;i<festivals.length;i++) {
+                button = document.createElement("button")
+                buttonIndicators.appendChild(button)
+            }
+
+            indicators = document.querySelectorAll(".indicators button")
+            for(let i=0;i<indicators.length;i++) {
+                indicators[i].addEventListener("click",function(){
+                    moveSlide(i-currentIndex)    
+                })
+            }
+            indicators[currentIndex].classList.add("selected")
+
+            return
         }
 
         function loadCards() {
@@ -574,7 +640,10 @@
                   </div>
                 </div>
                 <button class="arrow-right" onclick="moveSlide(1)">▶</button>
-              </div>
+            </div>
+            <div class="indicators">
+            
+            </div>
         </div>
     </div>
 </body>
