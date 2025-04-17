@@ -9,6 +9,8 @@ let leftArrow
 let rightArrow
 let indicators 
 let intervalId
+let baseGotoUrl = "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&s=tab.nx.all&query="
+let baseSearchUrl = "https://map.naver.com/p/search/"
 
 const holeFestivals = [
     {
@@ -261,7 +263,9 @@ function createCard(festival) {
     card.classList.add("card");
 
     card.innerHTML = `
-        <img src="${festival.image}" width="250px" height="360px">
+        <div class="half-circle1"></div>
+        <div class="half-circle2"></div>
+        <img src="${festival.image}" width="200px" height="360px">
         <div class="vertical-line"></div>
         <div class="info">
             <div class="title">
@@ -280,8 +284,8 @@ function createCard(festival) {
                 </div>
             </div>
             <div class="button">
-                <button class="goto">바로가기</button>
-                <button class="search-path">길찾기</button>
+                <a href="${baseGotoUrl+festival.title}"><button class="goto">바로가기</button></a>
+                <a href="${baseSearchUrl+festival.title}"><button class="search-path">길찾기</button></a>
             </div>
         </div>
     `;
@@ -344,14 +348,14 @@ function loadCards() {
 }
 
 const getPossibleFestival = (day) => {
-                const possibleFestivals = []
-                const today = new Date()
-                const newDate = new Date(today.getFullYear(),today.getMonth(),day)
-                for(let i=0;i<holeFestivals.length;i++) {
-                    const fest = holeFestivals[i]
-                    if(fest.dateStart<=newDate && newDate<=fest.dateEnd) {
-                        possibleFestivals.push(fest)
-                    }
+            const possibleFestivals = []
+            const today = new Date()
+            const newDate = new Date(today.getFullYear(),today.getMonth(),day)
+            for(let i=0;i<holeFestivals.length;i++) {
+                const fest = holeFestivals[i]
+                if(fest.dateStart<=newDate && newDate<=fest.dateEnd) {
+                    possibleFestivals.push(fest)
                 }
-                return possibleFestivals
             }
+            return possibleFestivals
+        }

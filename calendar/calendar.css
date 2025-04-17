@@ -111,7 +111,7 @@ border-radius: 10px;
 }
 
 .carousel-track {
-overflow: hidden;
+overflow: visible;
 width: 1200px;
 margin: 0px auto;
 }
@@ -121,13 +121,34 @@ display: flex;
 transition: transform 0.5s ease;
 }
 
+.half-circle1{
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #222;
+
+    position: relative;
+    left:263px;
+    top:-27px;
+}
+
+.half-circle2{
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #222;
+
+    position: relative;
+    left:248px;
+    bottom: -373px;
+}
+
 .card {
     display: flex;
     min-width: 700px;
     height: 400px;
     margin-right: 20px;
     background-color: white;
-    border-radius: 8px;
     padding: 20px;
     box-sizing: border-box;
     flex-shrink: 0;
@@ -135,13 +156,14 @@ transition: transform 0.5s ease;
     transition: transform 0.5s ease, opacity 0.5s ease;
     transform: scale(0.9);
     opacity: 0.5;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .card.active {
 transform: scale(1.05);
 opacity: 1;
 z-index: 2;
+
 }
 
 .card.fake {
@@ -152,7 +174,7 @@ z-index: 2;
 background: none;
 border: none;
 color: white;
-font-size: 2rem;
+font-size: 1.1rem;
 cursor: pointer;
 z-index: 10;
 }
@@ -161,16 +183,22 @@ z-index: 10;
     background: none;
     border: none;
     color: white;
-    font-size: 2rem;
+    font-size: 1.1rem;
     cursor: pointer;
     z-index: 10;
 }
 
 .vertical-line {
     width: 1px;
-    height: 340px; /* 원하는 높이 */
+    height: 340px;
     margin: auto 40px;
-    background-color: rgba(66,66,66,0.3);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(66,66,66,0.6),
+      rgba(66,66,66,0.6) 5px,
+      transparent 4px,
+      transparent 7px
+    );
 }
 
 .title {
@@ -202,6 +230,11 @@ z-index: 10;
     color: white;
     border-radius: 6px;
 }
+
+.goto:hover{
+    text-decoration: underline;
+}
+
 .search-path{
     width: 140px;
     height: 40px;
@@ -209,6 +242,10 @@ z-index: 10;
     color: black;
     border-radius: 6px;
     margin : 0px 10px
+}
+
+.search-path:hover{
+    text-decoration: underline;
 }
 
 .indicators{
