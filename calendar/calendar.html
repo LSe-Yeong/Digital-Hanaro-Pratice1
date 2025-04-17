@@ -206,6 +206,8 @@
         }
 
         .indicators{
+            display: flex;
+            align-items: center;
             height: 70px;
             color: white;
             background-color: #222;
@@ -225,6 +227,14 @@
            background-color: white;
         }
 
+        .slide-bottom {
+            width: 1320px;
+            margin: 0px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
     </style>
 
     <script>
@@ -238,6 +248,7 @@
         let leftArrow
         let rightArrow
         let indicators 
+        let intervalId
 
         const holeFestivals = [
             {
@@ -313,6 +324,7 @@
             dateContents = document.querySelectorAll(".date-set div span")
             let todayDay = new Date().getDay()
             let todayDate = new Date().getDate()
+            dateContents[0].textContent = todayDate
             selected = [dateContents[0],dateContents[1]]
 
             changeSelectedStyle(selected)
@@ -358,7 +370,9 @@
                     updateActiveCard()
                     moveToCenter(currentIndex + 1); // 가운데 카드 기준으로 이동
 
-                    indicators[currentIndex].classList.add("selected")
+                    indicators[currentIndex].classList.add("selected") 
+
+                    moveAuto()
                 })
             }
 
@@ -377,6 +391,19 @@
             updateActiveCard()
             moveToCenter(currentIndex + 1); // 가운데 카드 기준으로 이동
 
+            moveAuto()
+        }
+
+        function moveAuto(){
+            clearInterval(intervalId)
+            intervalId = setInterval(()=>{
+                if(currentIndex == festivals.length-1){
+                    moveSlide(-festivals.length)
+                }
+                else{
+                    moveSlide(1)
+                }
+            },3000)
         }
 
         function moveSlide(direction) {
@@ -561,8 +588,7 @@
                         }
                         return possibleFestivals
                     }
-
-                
+    
     </script>
 </head>
 <body>
@@ -641,8 +667,10 @@
                 </div>
                 <button class="arrow-right" onclick="moveSlide(1)">▶</button>
             </div>
-            <div class="indicators">
-            
+            <div class="slide-bottom">
+                <div class="indicators">
+                    
+                </div>
             </div>
         </div>
     </div>
