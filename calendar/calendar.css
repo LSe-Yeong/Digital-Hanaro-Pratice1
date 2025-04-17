@@ -12,6 +12,12 @@ hr{
     background-color: rgba(66,66,66,0.3);
 }
 
+
+.explanation span{
+    font-size: 30px;
+    margin : 40px 0px;
+}
+
 .marker{
     width: 60px;
     height: 20px;
@@ -19,7 +25,7 @@ hr{
     position: absolute;
     font-size: 12px;
     text-align: center;
-    top: 165px;
+    top: 186px;
     left:368px;
     border: 1px solid rgba(66,66,66,0.3);
     border-radius: 15px;

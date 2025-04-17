@@ -216,7 +216,21 @@
     </footer>
 
 
-
     <script src="calendar.js"></script>
+    <script src="../js/headerSearchForm.js"></script>
+    <script>
+        function toggleLangMenu() {
+            const langLayer = document.querySelector('.lang_layer');
+            langLayer.classList.toggle('show');
+        }
+
+        // 바깥 클릭 시 닫기
+        document.addEventListener('click', function (e) {
+            const langLayer = document.querySelector('.lang_layer');
+            if (!langLayer.contains(e.target)) {
+                langLayer.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
