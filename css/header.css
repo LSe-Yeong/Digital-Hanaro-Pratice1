@@ -7,7 +7,7 @@ h2 {
 }
 
 .header-top {
-    height: 90px;
+    height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -47,8 +47,9 @@ h2 {
 
 nav span {
     margin-left: 25px;
-    font-size: 20px;
-    color: #666666
+    font-size: 15px;
+    color: #666666;
+    transform: translateX(10%);
 }
 
 nav span:hover {

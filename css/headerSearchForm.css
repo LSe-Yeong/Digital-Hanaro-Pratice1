@@ -1,6 +1,6 @@
 .form {
     display: flex;
-    gap: 5px;
+    gap: 1px;
     align-items: flex-end;
 }
 
@@ -10,7 +10,8 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    gap: 1px;
+    padding: 5px;
     width: 40px;
     height: 40px;
     display: flex;
@@ -27,11 +28,11 @@
 }
 
 .ico-search {
-    background-image: url('../global/icon/ico_search.png');
+    background-image: url('../global/icon/Header/ico_search.png');
 }
 
 .ico-menu {
-    background-image: url('../global/icon/ico_menu.png');
+    background-image: url('../global/icon/Header/ico_menu.png');
 }
 
 .search_wrap {
