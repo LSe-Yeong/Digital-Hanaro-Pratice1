@@ -29,10 +29,14 @@
 
 .ico-search {
     background-image: url('../global/icon/Header/ico_search.png');
+    width: 25px;
+    height: 25px;
 }
 
 .ico-menu {
     background-image: url('../global/icon/Header/ico_menu.png');
+    width: 22px;
+    height: 22px;
 }
 
 .search_wrap {

@@ -1,7 +1,7 @@
 .ico-user {
     background-image: url("../global/icon/Header/ico_user.png");
-    width: 30px;
-    height: 30px;
+    width: 29px;
+    height: 29px;
 }
 
 .user-icon {
@@ -33,7 +33,7 @@
 }
 
 .popup-content input {
-    width: 80%;
+    width: 90%;
     padding: 8px;
     margin: 10px 0;
     font-size: 14px;
@@ -57,4 +57,5 @@
     margin-top: 10px;
     cursor: pointer;
     font-size: 13px;
+    transform: translateX(20%);
 }

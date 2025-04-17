@@ -1,8 +1,8 @@
 /*번역 선택 스타일*/
 .ico-language {
     background-image: url("../global/icon/Header/ico_language.png");
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     transform: translateY(-10%);
 }
 
