@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/headerLanguageSelect.css">
     <link rel="stylesheet" href="../css/travelInformation.css">
+    <link rel="stylesheet" href="../css/headerLoginPopup.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -52,6 +53,23 @@
                            target="_blank" title="새창">中文</a></li>
                 </ul>
             </div>
+
+            <button class="user-icon" onclick="toggleLoginPopup()">
+                <i class="ico ico-user"></i>
+            </button>
+
+            <div class="login-mask" id="loginMask" style="display: none;" onclick="closeLoginPopup(event)">
+                <div class="login-popup" id="loginPopup">
+                    <div class="popup-content">
+                        <h3>로그인</h3>
+                        <input type="text" placeholder="아이디" />
+                        <input type="password" placeholder="비밀번호" />
+                        <button class="btn-login">로그인</button>
+                        <button class="btn-close" onclick="toggleLoginPopup()">닫기</button>
+                    </div>
+                </div>
+            </div>
+
             <button class="menu" onclick="alert('전체 메뉴보기는 준비중입니다.')"><i class="ico ico-menu"></i></button>
         </div>
     </div>
@@ -176,6 +194,7 @@
 
 <script src="../js/headerSearchForm.js"></script>
 <script src="../js/travelInformation.js"></script>
+<script src="../js/loginPopup.js"></script>
 
 </body>
 </html>

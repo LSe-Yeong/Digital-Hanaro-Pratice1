@@ -1,0 +1,60 @@
+.ico-user {
+    background-image: url("../global/icon/Header/ico_user.png");
+    width: 30px;
+    height: 30px;
+}
+
+.user-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transform: translateY(-25%);
+}
+
+.login-mask {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-popup {
+    background: white;
+    border-radius: 10px;
+    padding: 30px 20px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.popup-content input {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.btn-login {
+    width: 80%;
+    padding: 10px;
+    background: #3da5f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: #888;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 13px;
+}
