@@ -92,7 +92,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 20%; /* 화면의 위쪽 20% */
+    height: 15%; /* 화면의 위쪽 15% */
     display: none; /* 기본적으로 숨겨둠 */
     background-color: rgba(255, 255, 255);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -108,7 +108,7 @@
 }
 
 #searchWrap input {
-    width: 80%;
+    width: 90%;
     padding: 10px;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -116,7 +116,7 @@
 }
 
 #searchWrap button {
-    padding: 10px 20px;
+    padding:5px 20px;
     font-size: 1rem;
     color: #fff;
     background-color: #007BFF;
