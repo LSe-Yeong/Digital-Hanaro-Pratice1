@@ -1,9 +1,13 @@
 function toggleSearchForm() {
-    const wrap = document.getElementById('searchWrap');
-    wrap.classList.toggle('active');
+    const searchWrap = document.getElementById('searchWrap');
+    if (searchWrap.style.display === 'none' || searchWrap.style.display === '') {
+        searchWrap.style.display = 'block';
+    } else {
+        searchWrap.style.display = 'none';
+    }
 }
 
 function closeSearchForm() {
-    const wrap = document.getElementById('searchWrap');
-    wrap.classList.remove('active');
+    const searchWrap = document.getElementById('searchWrap');
+    searchWrap.style.display = 'none';
 }
