@@ -26,7 +26,11 @@ const topSwiper = new Swiper(".gallery-top", {
                 document.querySelector(".main_showcase").style.backgroundColor = color;
             }
         }
-    }
+    },
+    simulateTouch: true,
+    touchRatio: 1,
+    touchAngle: 45,
+    grabCursor: true,
 });
 
 document.querySelector(".btn-prev").addEventListener("click", () => topSwiper.slidePrev());
