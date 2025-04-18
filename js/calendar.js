@@ -11,6 +11,7 @@ let indicators
 let intervalId
 let baseGotoUrl = "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&s=tab.nx.all&query="
 let baseSearchUrl = "https://map.naver.com/p/search/"
+let topSwiper
 
 const holeFestivals = [
     {
@@ -83,6 +84,8 @@ const holeFestivals = [
 let festivals;
 
 window.onload = () => {
+
+    //초기 설정
     dateContents = document.querySelectorAll(".date-set div span")
     let todayYear = new Date().getFullYear()
     let todayMonth = new Date().getMonth()+1
@@ -91,10 +94,10 @@ window.onload = () => {
     let todayDate = new Date().getDate()
     dateContents[0].textContent = todayDate
     selected = [dateContents[0],dateContents[1]]
-
     changeSelectedStyle(selected)
     festivals = getPossibleFestival(selected[0].textContent)
 
+    //그 다음 날짜들 생성
     for(let i=2;i<dateContents.length;i=i+2){
         dateContents[i].textContent=todayDate+1
         todayDate=(todayDate+1)%getLastDayOfMonth(todayYear,todayMonth)
@@ -113,23 +116,26 @@ window.onload = () => {
         todayDay=(todayDay+1)%7
     }
 
+    //날짜들에 대해서 클릭 이벤트 생성
     for(let i=0; i<dateContents.length;i=i+2){
         dateContents[i].addEventListener("click",function(){ 
+            //클릭 포커스 변경
             selected = [dateContents[i],dateContents[i+1]]
             festivals = getPossibleFestival(selected[0].textContent)
             if(festivals.length==0) {
                 alert("해당 날짜에 진행되는 행사가 존재하지 않습니다.")
                 return 
             }
-            
             changeSelectedStyle(selected)
+            
+            //슬라이드 카드 및 버튼 업로드
             loadCards()
 
             indicators[currentIndex].classList.remove("selected")
 
             currentIndex = 0;
-            slide = document.querySelector(".carousel-slide");
-            cards = document.querySelectorAll(".card");
+            slide = document.querySelector(".swiper-wrapper");
+            cards = document.querySelectorAll(".swiper-slide");
             cardWidth = cards[0].offsetWidth + 20; // 카드 + margin-right
             leftArrow = document.querySelector(".arrow-left")
             rightArrow = document.querySelector(".arrow-right")
@@ -142,15 +148,17 @@ window.onload = () => {
 
             indicators[currentIndex].classList.add("selected") 
 
+            //자동으로 넘어가도록
             moveAuto()
         })
     }
 
+    //초기 카드 및 버튼 업로드
     loadCards()
     
     currentIndex = 0;
-    slide = document.querySelector(".carousel-slide");
-    cards = document.querySelectorAll(".card");
+    slide = document.querySelector(".swiper-wrapper");
+    cards = document.querySelectorAll(".swiper-slide");
     cardWidth = cards[0].offsetWidth + 20; // 카드 + margin-right
     leftArrow = document.querySelector(".arrow-left")
     rightArrow = document.querySelector(".arrow-right")
@@ -181,6 +189,7 @@ function moveSlide(direction) {
 
         const maxIndex = cards.length - 3; // 3개씩 보이도록 제한
         currentIndex += direction;
+        // topSwiper.activeIndex = currentIndex
 
         if (currentIndex < 0) currentIndex = 0;
         if (currentIndex > maxIndex) currentIndex = maxIndex;
@@ -189,6 +198,7 @@ function moveSlide(direction) {
 
         updateArrow()
         updateActiveCard()
+        moveToCenter(currentIndex+1)
 
         indicators[currentIndex].classList.add("selected")
 }
@@ -265,7 +275,7 @@ function resetStyle() {
 
 function createCard(festival) {
     const card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("swiper-slide");
 
     card.innerHTML = `
         <div class="half-circle1"></div>
@@ -331,14 +341,14 @@ function loadButtons() {
 }
 
 function loadCards() {
-    const slide = document.querySelector(".carousel-slide");
+    const slide = document.querySelector(".swiper-wrapper");
 
     // 기존 카드 제거
     slide.innerHTML = "";
 
     // 가짜 카드 추가 (양쪽에)
     const fakeCardStart = document.createElement("div");
-    fakeCardStart.classList.add("card", "fake");
+    fakeCardStart.classList.add("swiper-slide", "fake");
     slide.appendChild(fakeCardStart);
 
     const arr = makeRandomArray(festivals.length)
@@ -348,7 +358,7 @@ function loadCards() {
     }
 
     const fakeCardEnd = document.createElement("div");
-    fakeCardEnd.classList.add("card", "fake");
+    fakeCardEnd.classList.add("swiper-slide", "fake");
     slide.appendChild(fakeCardEnd);
     
 }
